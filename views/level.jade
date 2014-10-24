@@ -12,7 +12,7 @@ link(href='css/style.css', rel='stylesheet')
 body
 .container
     .row.clearfix
-        .col-md-6.column
+        .col-md-6.column.fill-left
           h3
             | I know what to eat.
           .btn-group
@@ -51,8 +51,8 @@ body
               li.divider
               li
                 a(href='#') Something else here
-          button.btn.btn-default.btn-block(type='button') Go! 
-        .col-md-6.column
+          a.button.btn.btn-default.btn-block(href='/venue') Go! 
+        .col-md-6.column.fill-right
           h3
             | Show me what do you have.
           .btn-group
@@ -91,6 +91,6 @@ body
               li.divider
               li
                 a(href='#') Something else here
-          button.btn.btn-default.btn-block(type='button') Go! 
+          a.button.btn.btn-default.btn-block(href='/venue') Go! 
 
 != js('application')
