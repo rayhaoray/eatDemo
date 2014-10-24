@@ -1,0 +1,21 @@
+.fill { 
+    min-height: 100%;
+    height: 800px;
+}
+
+.fill-left { 
+    min-height: 100%;
+    height: 800px;
+    background-color: #eeeeee;
+}
+
+.fill-right { 
+    min-height: 100%;
+    height: 800px;
+    background-color: #cccccc;
+}
+
+.fill-width {
+	width: 100%;
+}
+
