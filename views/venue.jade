@@ -21,6 +21,16 @@ body
           #mapholder.map-frame
           .row.clearfix
             .col-md-12.column
+            form.form-horizontal(action='/addvenue', method='POST')
+              input(type='hidden', name='_csrf', value=_csrf)
+              .form-group
+                label.col-sm-3.control-label(for='tip') New Tip
+                .col-sm-4
+                  input.form-control(name='tip', id='tip')
+              .form-group
+                .col-sm-offset-3.col-sm-4
+                  button.btn.btn.btn-primary(type='submit')
+                      | Add Tip 
               ul
                 li
                   | Lorem ipsum dolor sit amet
