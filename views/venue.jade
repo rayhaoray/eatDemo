@@ -17,16 +17,24 @@ body
           .row.clearfix
             .col-md-12.column
               h3
-                #{venues}
+                #{venue.name}
           #mapholder.map-frame
           .row.clearfix
             .col-md-12.column
-            form.form-horizontal(action='/addvenue', method='POST')
+            form.form-horizontal(role='form', method='POST')
               input(type='hidden', name='_csrf', value=_csrf)
               .form-group
                 label.col-sm-3.control-label(for='tip') New Tip
                 .col-sm-4
                   input.form-control(name='tip', id='tip')
+              .form-group
+                .checkbox
+                  label.col-sm-3.control-label(for='like') #{venue.like} Like
+                  input.form-control(type='checkbox', name='like', id='like')
+              .form-group
+                .checkbox
+                  label.col-sm-3.control-label(for='unlike') #{venue.unlike} Unlike
+                  input.form-control(type='checkbox', name='unlike', id='unlike')
               .form-group
                 .col-sm-offset-3.col-sm-4
                   button.btn.btn.btn-primary(type='submit')
