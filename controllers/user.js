@@ -165,7 +165,7 @@ exports.postUpdatePassword = function(req, res, next) {
     if (err) return next(err);
 
     user.password = req.body.password;
-
+    console.log(req.body);
     user.save(function(err) {
       if (err) return next(err);
       req.flash('success', { msg: 'Password has been changed.' });
