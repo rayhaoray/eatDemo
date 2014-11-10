@@ -8,6 +8,7 @@ meta(name='description', content='')
 meta(name='author', content='Junjue')
 != css('styles')
 link(href='css/style.css', rel='stylesheet')
+script(type='text/javascript', src='js/knockout-min.js')
 
 body
 .container
@@ -75,59 +76,42 @@ body
             | Show me what do you have.
           br
           br
-          .btn-group.fill-width
-            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown') Select One
-              span.caret
-            ul.dropdown-menu.fill-width
+          #cascading-dropdown.fill-width
+            select.step1(name='screen').fill-width
+              option(value='') Screen size
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            select.step2(name='resolution').fill-width
+              option(value='') Screen resolution
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            select.step3(name='storage').fill-width
+              option(value='') Storage size
+            h4
+              | Matches
+              img(src='image/ajax-loader.gif', data-bind='visible: loading')
+            ul(data-bind='foreach: phones, visible: phones().length > 0')
               li
-                a(href='#') Action
-              li.divider
-              li
-                a(href='#') Another action
-              li.divider
-              li
-                a(href='#') Something else here
-          br
-          br
-          br
-          br
-          br
-          br
-          br
-          br 
-          .btn-group.fill-width
-            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown') Select One
-              span.caret
-            ul.dropdown-menu.fill-width
-              li
-                a(href='#') Action
-              li.divider
-              li
-                a(href='#') Another action
-              li.divider
-              li
-                a(href='#') Something else here
-          br
-          br
-          br
-          br
-          br
-          br
-          br
-          br      
-          .btn-group.fill-width
-            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown') Select One
-              span.caret
-            #dropd.ul.dropdown-menu.fill-width
-              li
-                a(href='#') Action
-              li.divider
-              li
-                a(href='#') Another action
-              li.divider
-              li
-                a(href='#') Something else here
+                span(data-bind='text: maker')
+                span(data-bind='text: model')
+            p(data-bind='visible: phones().length == 0') No matches
+          
           a.button.btn.btn-default.btn-bottom(href='/venue') Go! 
 
 != js('application')
+script(type='text/javascript', src='js/mockjax.js')
+script(type='text/javascript', src='js/cascadingdropdown.js')
+script(type='text/javascript', src='js/ajax-mocks.js')
 script(type='text/javascript', src='js/level.js')
