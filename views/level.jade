@@ -81,11 +81,17 @@ body
               li
                 a(data-bind='text: $data.key, event: {click: $parent.level1Click}')
 
-          div.row
-            select(data-bind='options: level2, value: levelSelection2')
+          div.btn-group.fill-width
+            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection2') Select One
+            ul.dropdown-menu.fill-width(data-bind='foreach: level2')
+              li
+                a(data-bind='text: $data.key, event: {click: $parent.level2Click}')
 
-          div.row
-            select(data-bind='options: level3, value: levelSelection3')
+          div.btn-group.fill-width
+            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection3') Select One
+            ul.dropdown-menu.fill-width(data-bind='foreach: level3')
+              li
+                a(data-bind='text: $data.key, event: {click: $parent.level3Click}')
 
           div.row
             span(data-bind='text: details')

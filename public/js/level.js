@@ -7,12 +7,20 @@
     self.level2 = ko.observableArray();
     self.level3 = ko.observableArray();
     self.levelSelection1 = ko.observable('select one');
-    self.levelSelection2 = ko.observable();
-    self.levelSelection3 = ko.observable();
+    self.levelSelection2 = ko.observable('select one');
+    self.levelSelection3 = ko.observable('select one');
     self.details = ko.observable();
     self.loading = ko.observable(false);
     self.level1Click = function() {
       self.levelSelection1(this.key())
+      console.log('this',this)
+    }
+    self.level2Click = function() {
+      self.levelSelection2(this.key())
+      console.log('this',this)
+    }
+    self.level3Click = function() {
+      self.levelSelection3(this.key())
       console.log('this',this)
     }
   }
@@ -30,7 +38,8 @@
     var l2 = selections[newVal]
     var keys = []
     for (var k in l2) {
-      keys.push(k)
+      //keys.push(k)
+      keys.push(new optionModel(k, k))
     }
     vm.level2(keys)
   })
@@ -40,8 +49,9 @@
     var l3 = selections[vm.levelSelection1()][newVal]
     var keys = []
     for (var k in l3) {
-      console.log('k', k)
-      keys.push(k)
+      //console.log('k', k)
+      //keys.push(k)
+      keys.push(new optionModel(k, k))
     }
     vm.level3(keys)
   })
