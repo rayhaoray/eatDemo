@@ -74,39 +74,52 @@ body
         .col-md-6.column.fill-right
           h3
             | Show me what do you have.
-          br
-          br
-          #cascading-dropdown.fill-width
-            select.step1(name='screen').fill-width
-              option(value='') Screen size
-            br
-            br
-            br
-            br
-            br
-            br
-            br
-            br
-            select.step2(name='resolution').fill-width
-              option(value='') Screen resolution
-            br
-            br
-            br
-            br
-            br
-            br
-            br
-            br
-            select.step3(name='storage').fill-width
-              option(value='') Storage size
-            h4
-              | Matches
-              img(src='image/ajax-loader.gif', data-bind='visible: loading')
-            ul(data-bind='foreach: phones, visible: phones().length > 0')
-              li
-                span(data-bind='text: maker')
-                span(data-bind='text: model')
-            p(data-bind='visible: phones().length == 0') No matches
+
+          div.row
+            select(data-bind='options: level1, value: levelSelection1')
+
+          div.row
+            select(data-bind='options: level2, value: levelSelection2')
+
+          div.row
+            select(data-bind='options: level3, value: levelSelection3')
+
+          div.row
+            span(data-bind='text: details')
+
+          //-br
+          //-br
+          //-#cascading-dropdown.fill-width
+          //-  select.step1(name='screen').fill-width
+          //-    option(value='') Screen size
+          //-  br
+          //-  br
+          //-  br
+          //-  br
+          //-  br
+          //-  br
+          //-  br
+          //-  br
+          //-  select.step2(name='resolution').fill-width
+          //-    option(value='') Screen resolution
+          //-  br
+          //-  br
+          //-  br
+          //-  br
+          //-  br
+          //-  br
+          //-  br
+          //-  br
+          //-  select.step3(name='storage').fill-width
+          //-    option(value='') Storage size
+          //-  h4
+          //-    | Matches
+          //-    img(src='image/ajax-loader.gif', data-bind='visible: loading')
+          //-  ul(data-bind='foreach: phones, visible: phones().length > 0')
+          //-    li
+          //-      span(data-bind='text: maker')
+          //-      span(data-bind='text: model')
+          //-  p(data-bind='visible: phones().length == 0') No matches
           
           a.button.btn.btn-default.btn-bottom(href='/venue') Go! 
 
