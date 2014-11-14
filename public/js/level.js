@@ -23,6 +23,14 @@
       self.levelSelection3(this.key())
       console.log('this',this)
     }
+    self.showSelect2 = function() {
+      console.log(self.levelSelection1())
+      console.log(self.levelSelection1() !== 'select one')
+      return self.levelSelection1 !== 'select one'
+    }
+    self.showSelect3 = function() {
+      return self.levelSelection1 !== 'select one' && self.levelSelection1 !== 'select one'
+    }
   }
 
   var vm = new viewModel()
