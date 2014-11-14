@@ -75,8 +75,11 @@ body
           h3
             | Show me what do you have.
 
-          div.row
-            select(data-bind='options: level1, value: levelSelection1')
+          div.btn-group.fill-width
+            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection1') Select One
+            ul.dropdown-menu.fill-width(data-bind='foreach: level1')
+              li
+                a(data-bind='text: $data.key, event: {click: $parent.level1Click}')
 
           div.row
             select(data-bind='options: level2, value: levelSelection2')

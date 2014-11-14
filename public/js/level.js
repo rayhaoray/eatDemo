@@ -1,19 +1,29 @@
 (function() {
   function viewModel() {
-      //this.phones = ko.observableArray();
+    var self = this
+    //this.phones = ko.observableArray();
 
-      this.level1 = ko.observableArray();
-      this.level2 = ko.observableArray();
-      this.level3 = ko.observableArray();
-      this.levelSelection1 = ko.observable();
-      this.levelSelection2 = ko.observable();
-      this.levelSelection3 = ko.observable();
-      this.details = ko.observable();
-      this.loading = ko.observable(false);
+    self.level1 = ko.observableArray();
+    self.level2 = ko.observableArray();
+    self.level3 = ko.observableArray();
+    self.levelSelection1 = ko.observable('select one');
+    self.levelSelection2 = ko.observable();
+    self.levelSelection3 = ko.observable();
+    self.details = ko.observable();
+    self.loading = ko.observable(false);
+    self.level1Click = function() {
+      self.levelSelection1(this.key())
+      console.log('this',this)
+    }
   }
 
   var vm = new viewModel()
   var selections = null
+
+  function optionModel(k, v) {
+    this.key = ko.observable(k)
+    this.value = ko.observable(v)
+  }
 
   vm.levelSelection1.subscribe(function (newVal) {
     console.log(newVal)
@@ -39,12 +49,6 @@
   vm.levelSelection3.subscribe(function (newVal) {
     console.log(newVal)
     var details = selections[vm.levelSelection1()][vm.levelSelection2()][newVal]
-    //var keys = []
-    //for (var k in l3) {
-    //  console.log('k', k)
-    //  keys.push(k)
-    //}
-    //vm.level3(keys)
     vm.details(details)
   })
 
@@ -56,7 +60,7 @@
       selections = data
       var keys = []
       for (var k in data) {
-        keys.push(k)
+        keys.push(new optionModel(k, k))
       }
       vm.level1(keys)
     }
