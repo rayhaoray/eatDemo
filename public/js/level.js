@@ -11,28 +11,18 @@
     self.loading = ko.observable(false);
     self.level1Click = function() {
       self.levelSelection1(this.key())
-      console.log('this',this)
     }
 
     self.level2Click = function() {
       self.levelSelection2(this.key())
-      console.log('this',this)
     }
 
     self.level3Click = function() {
       self.levelSelection3(this.key())
-      console.log('this',this)
     }
 
-    self.showSelect2 = function() {
-      console.log(self.levelSelection1())
-      console.log(self.levelSelection1() !== 'select one')
-      return self.levelSelection1 !== 'select one'
-    }
-
-    self.showSelect3 = function() {
-      return self.levelSelection1 !== 'select one' && self.levelSelection1 !== 'select one'
-    }
+    self.showSelect2 = ko.observable(false)
+    self.showSelect3 = ko.observable(false)
   }
 
   var vm = new viewModel()
@@ -44,7 +34,9 @@
   }
 
   vm.levelSelection1.subscribe(function (newVal) {
-    console.log(newVal)
+    if (newVal !== 'select one') {
+      vm.showSelect2(true)
+    }
     var l2 = selections[newVal]
     var keys = []
     for (var k in l2) {
@@ -55,7 +47,9 @@
   })
 
   vm.levelSelection2.subscribe(function (newVal) {
-    console.log(newVal)
+    if (newVal !== 'select one') {
+      vm.showSelect3(true)
+    }
     var l3 = selections[vm.levelSelection1()][newVal]
     var keys = []
     for (var k in l3) {
@@ -66,7 +60,6 @@
   })
 
   vm.levelSelection3.subscribe(function (newVal) {
-    console.log(newVal)
     var details = selections[vm.levelSelection1()][vm.levelSelection2()][newVal]
     vm.details(details)
   })
@@ -75,7 +68,6 @@
     type: 'GET',
     url: '/level-all-data',
     success: function (data) {
-      console.log(data)
       selections = data
       var keys = []
       for (var k in data) {
