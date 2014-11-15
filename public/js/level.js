@@ -4,9 +4,9 @@
     self.level1 = ko.observableArray();
     self.level2 = ko.observableArray();
     self.level3 = ko.observableArray();
-    self.levelSelection1 = ko.observable('select one');
-    self.levelSelection2 = ko.observable('select one');
-    self.levelSelection3 = ko.observable('select one');
+    self.levelSelection1 = ko.observable('Select One');
+    self.levelSelection2 = ko.observable('Select One');
+    self.levelSelection3 = ko.observable('Select One');
     self.details = ko.observable();
     self.loading = ko.observable(false);
     self.level1Click = function() {
@@ -34,11 +34,11 @@
   }
 
   vm.levelSelection1.subscribe(function (newVal) {
-    if (newVal !== 'select one') {
+    if (newVal !== 'Select One') {
       vm.showSelect2(true)
       console.log(vm.levelSelection2())
-      vm.levelSelection2('select one')
-      vm.levelSelection3('select one')
+      vm.levelSelection2('Select One')
+      vm.showSelect3(false)
     }
     var l2 = selections[newVal]
     var keys = []
@@ -50,7 +50,8 @@
   })
 
   vm.levelSelection2.subscribe(function (newVal) {
-    if (newVal !== 'select one') {
+    if (newVal !== 'Select One') {
+      vm.levelSelection3('Select One')
       vm.showSelect3(true)
       var l3 = selections[vm.levelSelection1()][newVal]
       var keys = []
