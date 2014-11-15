@@ -18,121 +18,75 @@ body
             | I know what to eat.
           br
           br
-          .btn-group.fill-width
-            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown') Select One
-              span.caret
-            ul.dropdown-menu.fill-width
-              li
-                a(href='#') Action
-              li.divider
-              li
-                a(href='#') Another action
-              li.divider
-              li
-                a(href='#') Something else here
-          br
-          br
-          br
-          br
-          br
-          br
-          br
-          br 
-          .btn-group.fill-width
-            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown') Select One
-              span.caret
-            ul.dropdown-menu.fill-width
-              li
-                a(href='#') Action
-              li.divider
-              li
-                a(href='#') Another action
-              li.divider
-              li
-                a(href='#') Something else here
-          br
-          br
-          br
-          br
-          br
-          br
-          br
-          br 
-          .btn-group.fill-width
-            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown') Select One
-              span.caret
-            ul.dropdown-menu.fill-width
-              li
-                a(href='#') Action
-              li.divider
-              li
-                a(href='#') Another action
-              li.divider
-              li
-                a(href='#') Something else here
-          a.button.btn.btn-default.btn-bottom(href='/venue') Go! 
-        .col-md-6.column.fill-right
-          h3
-            | Show me what do you have.
-
           div.btn-group.fill-width
             button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection1') Select One
             ul.dropdown-menu.fill-width(data-bind='foreach: level1')
               li
                 a(data-bind='text: $data.key, event: {click: $parent.level1Click}')
               li.divider(data-bind='visible: $data.hasNext')
-
+          br
+          br
+          br
+          br
+          br
+          br
+          br
+          br 
           div.btn-group.fill-width
             button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection2, visible: showSelect2()') Select One
             ul.dropdown-menu.fill-width(data-bind='foreach: level2')
               li
                 a(data-bind='text: $data.key, event: {click: $parent.level2Click}')
               li.divider(data-bind='visible: $data.hasNext')
-
+          br
+          br
+          br
+          br
+          br
+          br
+          br
+          br 
           div.btn-group.fill-width
             button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection3, visible: showSelect3()') Select One
             ul.dropdown-menu.fill-width(data-bind='foreach: level3')
               li
                 a(data-bind='text: $data.key, event: {click: $parent.level3Click}')
               li.divider(data-bind='visible: $data.hasNext')
-
+          a.button.btn.btn-default.btn-bottom(href='/venue') Go! 
+        
+        .col-md-6.column.fill-right
+          h3
+            | Show me what do you have.
+          br
+          br
+          div.btn-group.fill-width
+            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection1') Select One
+            ul.dropdown-menu.fill-width(data-bind='foreach: level1')
+              li
+                a(data-bind='text: $data.key, event: {click: $parent.level1Click}')
+              li.divider(data-bind='visible: $data.hasNext')
+          br
+          br
+          div.btn-group.fill-width
+            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection2, visible: showSelect2()') Select One
+            ul.dropdown-menu.fill-width(data-bind='foreach: level2')
+              li
+                a(data-bind='text: $data.key, event: {click: $parent.level2Click}')
+              li.divider(data-bind='visible: $data.hasNext')
+          br
+          br
+          div.btn-group.fill-width
+            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection3, visible: showSelect3()') Select One
+            ul.dropdown-menu.fill-width(data-bind='foreach: level3')
+              li
+                a(data-bind='text: $data.key, event: {click: $parent.level3Click}')
+              li.divider(data-bind='visible: $data.hasNext')
+          br
+          br
           div.row
             span(data-bind='text: details')
-
-          //-br
-          //-br
-          //-#cascading-dropdown.fill-width
-          //-  select.step1(name='screen').fill-width
-          //-    option(value='') Screen size
-          //-  br
-          //-  br
-          //-  br
-          //-  br
-          //-  br
-          //-  br
-          //-  br
-          //-  br
-          //-  select.step2(name='resolution').fill-width
-          //-    option(value='') Screen resolution
-          //-  br
-          //-  br
-          //-  br
-          //-  br
-          //-  br
-          //-  br
-          //-  br
-          //-  br
-          //-  select.step3(name='storage').fill-width
-          //-    option(value='') Storage size
-          //-  h4
-          //-    | Matches
-          //-    img(src='image/ajax-loader.gif', data-bind='visible: loading')
-          //-  ul(data-bind='foreach: phones, visible: phones().length > 0')
-          //-    li
-          //-      span(data-bind='text: maker')
-          //-      span(data-bind='text: model')
-          //-  p(data-bind='visible: phones().length == 0') No matches
-          
+          br
+          br 
           a.button.btn.btn-default.btn-bottom(href='/venue') Go! 
 
 != js('application')
