@@ -36,6 +36,9 @@
   vm.levelSelection1.subscribe(function (newVal) {
     if (newVal !== 'select one') {
       vm.showSelect2(true)
+      console.log(vm.levelSelection2())
+      vm.levelSelection2('select one')
+      vm.levelSelection3('select one')
     }
     var l2 = selections[newVal]
     var keys = []
@@ -49,14 +52,14 @@
   vm.levelSelection2.subscribe(function (newVal) {
     if (newVal !== 'select one') {
       vm.showSelect3(true)
+      var l3 = selections[vm.levelSelection1()][newVal]
+      var keys = []
+      for (var k in l3) {
+        keys.push(new optionModel(k, k))
+      }
+      keys[keys.length - 1].hasNext(false)
+      vm.level3(keys)
     }
-    var l3 = selections[vm.levelSelection1()][newVal]
-    var keys = []
-    for (var k in l3) {
-      keys.push(new optionModel(k, k))
-    }
-    keys[keys.length - 1].hasNext(false)
-    vm.level3(keys)
   })
 
   vm.levelSelection3.subscribe(function (newVal) {
