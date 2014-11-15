@@ -83,16 +83,18 @@ body
               li.divider(data-bind='visible: $data.hasNext')
 
           div.btn-group.fill-width
-            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection2, enable: showSelect2') Select One
+            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection2, visible: showSelect2') Select One
             ul.dropdown-menu.fill-width(data-bind='foreach: level2')
               li
                 a(data-bind='text: $data.key, event: {click: $parent.level2Click}')
+              li.divider(data-bind='visible: $data.hasNext')
 
           div.btn-group.fill-width
             button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection3') Select One
             ul.dropdown-menu.fill-width(data-bind='foreach: level3')
               li
                 a(data-bind='text: $data.key, event: {click: $parent.level3Click}')
+              li.divider(data-bind='visible: $data.hasNext')
 
           div.row
             span(data-bind='text: details')

@@ -50,6 +50,7 @@
     for (var k in l2) {
       keys.push(new optionModel(k, k))
     }
+    keys[keys.length - 1].hasNext(false)
     vm.level2(keys)
   })
 
@@ -60,6 +61,7 @@
     for (var k in l3) {
       keys.push(new optionModel(k, k))
     }
+    keys[keys.length - 1].hasNext(false)
     vm.level3(keys)
   })
 
