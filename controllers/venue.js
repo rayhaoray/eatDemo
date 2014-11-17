@@ -1,4 +1,5 @@
 var Venue = require('../models/Venue');
+var Tip = require('../models/Tip');
 
 exports.venue = function(req, res) {
 	Venue.findOne({name: 'Hotdog'}, function (err, currentVenue){
@@ -8,17 +9,15 @@ exports.venue = function(req, res) {
 };
 
 exports.postVenue = function(req, res){
-	Venue.find({name: 'Hotdog'}, function (err, venues){
-		var venue = venues[0];
+	Tip.find({name: 'Hotdog'}, function (err, tips){
+		var tip = tips[0];
 		if(req.body.tip != '')
-			venue.tip.push(req.body.tip);
+			tip.tip = req.body.tip;
 		if(req.body.like == 'on')
-			venue.like++;
-		if(req.body.unlike == 'on')
-			venue.unlike++;
-		venue.save(function (err, venue) {
+			tip.like = true;
+		tip.save(function (err, venue) {
 			if(err) return console.log("error");
-			req.flash('success', { msg: 'Venue Updated.' });
+			req.flash('success', { msg: 'Tip Updated.' });
 			res.redirect('/venue');
 		});
 	});
