@@ -11,6 +11,7 @@ link(href='css/style.css', rel='stylesheet')
 != css('styles')
 
 body
+  include partials/navbar
 .container
     .row.clearfix
         .col-md-6.column
@@ -35,6 +36,9 @@ body
                 .checkbox
                   label.col-sm-3.control-label(for='unlike') #{venue.unlike} Unlike
                   input.form-control(type='checkbox', name='unlike', id='unlike')
+              .form-group
+                  label.col-sm-3.control-label() From: 
+                  input.form-control(type='email', name='email', value='#{user.email}')
               .form-group
                 .col-sm-offset-3.col-sm-4
                   button.btn.btn.btn-primary(type='submit')

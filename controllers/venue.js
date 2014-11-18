@@ -1,6 +1,17 @@
 var Venue = require('../models/Venue');
 var Tip = require('../models/Tip');
 
+
+// For todays date;
+Date.prototype.today = function () { 
+    return (((this.getMonth()+1) < 10)?"0":"") + (this.getMonth()+1) +"/"+ ((this.getDate() < 10)?"0":"") + this.getDate() +"/"+ this.getFullYear();
+}
+
+// For the time now
+Date.prototype.timeNow = function () {
+     return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes() +":"+ ((this.getSeconds() < 10)?"0":"") + this.getSeconds();
+}
+
 exports.venue = function(req, res) {
 	Venue.findOne({name: 'Hotdog'}, function (err, currentVenue){
 		console.log(currentVenue);
@@ -8,7 +19,7 @@ exports.venue = function(req, res) {
 	});
 };
 
-exports.postVenue = function(req, res){
+exports.updateTip = function(req, res){
 	Tip.find({name: 'Hotdog'}, function (err, tips){
 		var tip = tips[0];
 		if(req.body.tip != '')
@@ -22,3 +33,20 @@ exports.postVenue = function(req, res){
 		});
 	});
 };
+
+exports.postTip = function(req, res){
+	var newTip = new Tip({
+		name : 'Hotdog',
+		email : req.body.email,
+		date : new Date().today() + " @ " + new Date().timeNow(),
+		like : req.body.like == 'on',
+		tip : req.body.tip
+	});
+	console.log("email" + req.body.email);
+	console.log("tip" + newTip);
+	newTip.save(function (err, venue) {
+		if(err) return console.log("error");
+		req.flash('success', { msg: 'Tip Added.' });
+		res.redirect('/venue');
+	});
+}

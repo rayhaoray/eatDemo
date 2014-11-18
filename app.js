@@ -125,7 +125,7 @@ app.get('/cover', coverController.cover);
 app.get('/level', levelController.level);
 app.get('/level-all-data', levelController.levelAllData)
 app.get('/venue', venueController.venue);
-app.post('/venue', venueController.postVenue);
+app.post('/venue', venueController.postTip);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
