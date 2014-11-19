@@ -1,15 +1,9 @@
-head
-meta(charset='utf-8')
-title level one
-meta(name='viewport', content='width=device-width, initial-scale=1.0')
-meta(name='description', content='')
-meta(name='author', content='junjue')
-!= css('styles')
-link(href='css/style.css', rel='stylesheet')
-script(type='text/javascript', src='js/knockout-min.js')
+extends layout
+block title
+  link(href='css/style.css', rel='stylesheet')
+  script(type='text/javascript', src='js/knockout-min.js')
 
-body
-.container
+block content
     .row.clearfix
         .col-md-6.column.fill-left
           h3
@@ -87,8 +81,8 @@ body
           br 
           a.button.btn.btn-default.btn-bottom(href='/venue') Go! 
 
-!= js('application')
-script(type='text/javascript', src='js/mockjax.js')
-script(type='text/javascript', src='js/cascadingdropdown.js')
-script(type='text/javascript', src='js/ajax-mocks.js')
-script(type='text/javascript', src='js/level.js')
+block script
+  script(type='text/javascript', src='js/mockjax.js')
+  script(type='text/javascript', src='js/cascadingdropdown.js')
+  script(type='text/javascript', src='js/ajax-mocks.js')
+  script(type='text/javascript', src='js/level.js')

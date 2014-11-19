@@ -1,27 +1,43 @@
-doctype html
-html(lang='en')
-head
-meta(charset='utf-8')
-title History 
-meta(name='viewport', content='width=device-width, initial-scale=1.0')
-meta(name='description', content='')
-meta(name='author', content='Junjue')
+extends layout
 
+block title
 link(href='css/style.css', rel='stylesheet')
-!= css('styles')
 
-body
-  include partials/navbar
-.container
+block content
   h3
     #{tips[0].email}
       #tips
         for tip in tips
-          h2
+          .row
+            .col-sm-6
+              h2 #{tip.name} 
+              p #{tip.tip}
+              p #{tip.date}
+          //-h2
             | Venue: #{tip.name}
-          h3
+          //-h3
             | Tip: #{tip.tip}
-          p 
+          //-p 
             | Time: #{tip.date}
 
-!= js('application')
+    .col-sm-6
+      h2 Heading
+      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      p
+        a.btn.btn-default(href='#', role='button') View details »
+
+    .col-sm-6
+      h2 Heading
+      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      p
+        a.btn.btn-default(href='#', role='button') View details »
+    .col-sm-6
+      h2 Heading
+      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      p
+        a.btn.btn-default(href='#', role='button') View details »
+    .col-sm-6
+      h2 Heading
+      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      p
+        a.btn.btn-default(href='#', role='button') View details »

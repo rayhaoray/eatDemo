@@ -1,18 +1,9 @@
-doctype html
-html(lang='en')
-head
-meta(charset='utf-8')
-title Venues
-meta(name='viewport', content='width=device-width, initial-scale=1.0')
-meta(name='description', content='')
-meta(name='author', content='Junjue')
+extends layout
 
+block title
 link(href='css/style.css', rel='stylesheet')
-!= css('styles')
 
-body
-  include partials/navbar
-.container
+block content
     .row.clearfix
         .col-md-6.column
           .row.clearfix
@@ -91,6 +82,6 @@ body
                   | Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.
               button.btn.btn-default(type='button') Default
 
-!= js('application')
-script(src='https://maps.googleapis.com/maps/api/js')
-script(type='text/javascript', src='js/map_venue.js')
+block script
+  script(src='https://maps.googleapis.com/maps/api/js')
+  script(type='text/javascript', src='js/map_venue.js')
