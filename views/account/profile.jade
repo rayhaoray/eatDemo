@@ -62,11 +62,7 @@ block content
 
   .page-header
     h3 History 
-
-  form.form-horizontal(action='/account/history', method='GET')
-    input(type='hidden', name='_csrf', value=_csrf)
-    .form-group
-      label.col-sm-3.control-label() Tips:
+      a.button.btn.btn-default.btn-bottom(href='/history') View My History 
 
   .page-header
     h3 Delete Account

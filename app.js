@@ -29,6 +29,7 @@ var homeController = require('./controllers/home');
 var coverController = require('./controllers/cover');
 var levelController = require('./controllers/level');
 var venueController = require('./controllers/venue');
+var historyController = require('./controllers/history');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
@@ -126,6 +127,7 @@ app.get('/level', levelController.level);
 app.get('/level-all-data', levelController.levelAllData)
 app.get('/venue', venueController.venue);
 app.post('/venue', venueController.postTip);
+app.get('/history', historyController.getHistory);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
