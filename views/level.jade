@@ -1,6 +1,7 @@
 extends layout
 block title
   link(href='css/style.css', rel='stylesheet')
+  link(href='css/lib/select2/select2.css', rel='stylesheet')
   script(type='text/javascript', src='js/knockout-min.js')
 
 block content
@@ -8,43 +9,13 @@ block content
         .col-md-6.column.fill-left
           h3
             | I know what to eat.
-          br
-          br
-          div.btn-group.fill-width
-            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection1') Select One
-            ul.dropdown-menu.fill-width(data-bind='foreach: level1')
-              li
-                a(data-bind='text: $data.key, event: {click: $parent.level1Click}')
-              li.divider(data-bind='visible: $data.hasNext')
-          br
-          br
-          br
-          br
-          br
-          br
-          br
-          br 
-          div.btn-group.fill-width
-            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection2, visible: showSelect2()') Select One
-            ul.dropdown-menu.fill-width(data-bind='foreach: level2')
-              li
-                a(data-bind='text: $data.key, event: {click: $parent.level2Click}')
-              li.divider(data-bind='visible: $data.hasNext')
-          br
-          br
-          br
-          br
-          br
-          br
-          br
-          br 
-          div.btn-group.fill-width
-            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection3, visible: showSelect3()') Select One
-            ul.dropdown-menu.fill-width(data-bind='foreach: level3')
-              li
-                a(data-bind='text: $data.key, event: {click: $parent.level3Click}')
-              li.divider(data-bind='visible: $data.hasNext')
-          a.button.btn.btn-default.btn-bottom(href='/venue') Go! 
+          select#venues-selection.btn.btn-default.dropdown-toggle.fill-width(data-bind='value: leftVenue')
+            each venue in venues
+              option(value=venue._id) #{venue.name}
+          a.button.btn.btn-default.btn-bottom(data-bind='click: leftGo') Go! 
+          form#left-form(action='/venue', method='POST', display: none)
+            input(type='hidden', name='_csrf', value=_csrf)
+            input(type='hidden', name='venueId', data-bind='value: leftVenue')
         
         .col-md-6.column.fill-right
           h3
@@ -79,10 +50,17 @@ block content
             span(data-bind='text: details')
           br
           br 
-          a.button.btn.btn-default.btn-bottom(href='/venue') Go! 
+          a.button.btn.btn-default.btn-bottom(data-bind='click: rightGo') Go! 
+
+          form#right-form(action='/venue', method='POST', display: none)
+            input(type='hidden', name='_csrf', value=_csrf)
+            input(type='hidden', name='select1', data-bind='value: levelSelection1')
+            input(type='hidden', name='select2', data-bind='value: levelSelection2')
+            input(type='hidden', name='select3', data-bind='value: levelSelection3')
 
 block script
   script(type='text/javascript', src='js/mockjax.js')
   script(type='text/javascript', src='js/cascadingdropdown.js')
   script(type='text/javascript', src='js/ajax-mocks.js')
   script(type='text/javascript', src='js/level.js')
+  script(type='text/javascript', src='js/select2.min.js')

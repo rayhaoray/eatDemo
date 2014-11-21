@@ -124,9 +124,10 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 app.get('/', homeController.index);
 app.get('/cover', coverController.cover);
 app.get('/level', levelController.level);
-app.get('/level-all-data', levelController.levelAllData)
+app.get('/level-all-data', levelController.levelAllData);
+app.post('/venue', venueController.go);
 app.get('/venue', venueController.venue);
-app.post('/venue', venueController.postTip);
+app.post('/addTip', venueController.postTip);
 app.get('/history', historyController.getHistory);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);

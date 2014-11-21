@@ -1,6 +1,7 @@
 (function() {
   function viewModel() {
     var self = this
+    self.leftVenue = ko.observable();
     self.level1 = ko.observableArray();
     self.level2 = ko.observableArray();
     self.level3 = ko.observableArray();
@@ -23,6 +24,16 @@
 
     self.showSelect2 = ko.observable(false)
     self.showSelect3 = ko.observable(false)
+
+    self.rightGo = function () {
+      console.log()
+      $('#right-form').submit()
+    }
+
+    self.leftGo = function () {
+      console.log()
+      $('#left-form').submit()
+    }
   }
 
   var vm = new viewModel()
@@ -83,5 +94,9 @@
   })
 
   ko.applyBindings(vm);
+
+  $(function () {
+    $("#venues-selection").select2()
+  })
 
 })()

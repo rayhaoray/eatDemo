@@ -1,5 +1,6 @@
 var express = require("express")
 router = express.Router()
+var Venue = require('../models/Venue')
 
 //router
 //  .route
@@ -12,7 +13,7 @@ router = express.Router()
 exports.levelAllData = function (req, res) {
   res.send({
     //4: [720, 1080]
-      fast: { 
+      Fast: { 
               burger: {
                         1: 'nice',
                         2: 'tip',
@@ -24,7 +25,7 @@ exports.levelAllData = function (req, res) {
                         6: 'bad'
                       }
             },
-      slow: { 
+      Chinese: { 
               burger1: {
                         7: 'nice',
                         8: 'tip',
@@ -40,7 +41,10 @@ exports.levelAllData = function (req, res) {
 }
 
 exports.level = function(req, res) {
-  res.render('level', {
-    title: 'Level'
-  });
+  Venue.find({}, function (err, venues) {
+    res.render('level', {
+      title: 'Level',
+      venues: venues
+    });
+  })
 };

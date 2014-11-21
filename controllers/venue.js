@@ -50,3 +50,14 @@ exports.postTip = function(req, res){
 		res.redirect('/venue');
 	});
 }
+
+exports.go = function (req, res) {
+  console.log(req.body)
+  var select1 = req.body.select1
+  var select2 = req.body.select2
+  var select3 = req.body.select3
+  Venue.find({ category: { "$in" : [select1]} }).sort({like: 'desc'}).exec(function (err, currentVenues){
+  	console.log(currentVenues);
+  	res.render('venue', {venue: currentVenues});
+  });
+}
