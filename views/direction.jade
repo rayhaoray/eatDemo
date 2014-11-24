@@ -1,0 +1,23 @@
+extends layout
+block title
+    title Directions
+    link(href='css/style.css', rel='stylesheet')
+    script(src='https://maps.googleapis.com/maps/api/js?v=3.exp')
+    script(type='text/javascript', src='js/direction.js')
+
+block content
+    .row.clearfix
+        .col-md-6.column.fill-left
+          #panel.panel
+            b Start: 
+            select#start(onchange='calcRoute();')
+              option(value='current') CurrentLocation
+            b End: 
+            select#end(onchange='calcRoute();')
+              option(value='neu') NEU
+              option(value='bostonCommon') Boston Common
+          #map-canvas.map-canvas
+        
+        .col-md-6.column.fill-right
+          h3
+            | Directions
