@@ -130,7 +130,7 @@ app.get('/level-all-data', levelController.levelAllData);
 app.post('/venue', venueController.go);
 app.get('/venue', venueController.getVenue);
 app.get('/detail', detailController.getDetail);
-app.post('/addTip', venueController.postTip);
+app.post('/detail', detailController.postTip);
 app.get('/history', historyController.getHistory);
 app.get('/direction', directionController.getDirection);
 app.get('/login', userController.getLogin);

@@ -6,7 +6,42 @@ block title
 block content
     .row.clearfix
         .col-md-6.column.fill-left
-          #map-canvas.map-canvas
+          .row.clearfix
+            .col-md-12.column
+            h2=venue.name 
+            h3 Photos 
+            .col-md-12.column
+            h3 Details
+            .row
+                .col-sm-6
+                  p Likes: #{venue.like} 
+                  p Score: #{venue.score}
+                  p Address: #{venue.address}
+                  p Phone: #{venue.telephone}
         
         .col-md-6.column.fill-right
-          #directions-panel.fill
+          .row.clearfix
+            .col-md-12.column
+            h3 Popular Tips
+            .col-md-12.column
+            h3 My Tips
+            h4 No tip yet? Add one now! 
+            form.form-horizontal(role='form', method='POST')
+              input(type='hidden', name='_csrf', value=_csrf)
+              .form-group
+                label.col-sm-3.control-label(for='tip') New Tip
+                .col-sm-4
+                  input.form-control(name='tip', id='tip')
+              .form-group
+                .checkbox
+                  label.col-sm-3.control-label(for='like') #{venue.like} Like
+                  input.form-control(type='checkbox', name='like', id='like')
+              .form-group
+                  label.col-sm-3.control-label() From: 
+                  - if(typeof(user) !== 'undefined'){
+                      input.form-control(type='email', name='email', value='#{user.email}')
+                  - }
+              .form-group
+                .col-sm-offset-3.col-sm-4
+                  button.btn.btn.btn-primary(type='submit')
+                      | Add Tip 

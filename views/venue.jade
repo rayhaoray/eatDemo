@@ -4,6 +4,7 @@ block title
 link(href='css/style.css', rel='stylesheet')
 
 block content
+    -if(typeof(venue[0]) !== 'undefined'){
     .row.clearfix
         .col-md-6.column
           h2="Top Venue"
@@ -13,28 +14,6 @@ block content
           #mapholder.map-frame
           .row.clearfix
             .col-md-12.column
-            form.form-horizontal(role='form', method='POST')
-              input(type='hidden', name='_csrf', value=_csrf)
-              .form-group
-                label.col-sm-3.control-label(for='tip') New Tip
-                .col-sm-4
-                  input.form-control(name='tip', id='tip')
-              .form-group
-                .checkbox
-                  label.col-sm-3.control-label(for='like') #{venue.like} Like
-                  input.form-control(type='checkbox', name='like', id='like')
-              .form-group
-                .checkbox
-                  label.col-sm-3.control-label(for='unlike') #{venue.unlike} Unlike
-                  input.form-control(type='checkbox', name='unlike', id='unlike')
-              .form-group
-                  label.col-sm-3.control-label() From: 
-                  //- input.form-control(type='email', name='email', value='#{user.email}')
-              .form-group
-                .col-sm-offset-3.col-sm-4
-                  button.btn.btn.btn-primary(type='submit')
-                      | Add Tip 
-              
               .row
                 .col-sm-6
                   p Likes: #{venue[0].like} 
@@ -66,6 +45,10 @@ block content
                   p Address: #{venue[1].address}
                   p Phone: #{venue[1].telephone}
                   a.btn.btn-lg.btn-default(href='/direction') GO!
+    -}
+    -else{
+      h2 Oops!
+    -}
 
 block script
   script(src='https://maps.googleapis.com/maps/api/js')

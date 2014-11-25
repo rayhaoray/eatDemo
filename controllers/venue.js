@@ -19,37 +19,7 @@ exports.getVenue = function(req, res) {
 	});
 };
 
-exports.updateTip = function(req, res){
-	Tip.find({name: 'Hotdog'}, function (err, tips){
-		var tip = tips[0];
-		if(req.body.tip != '')
-			tip.tip = req.body.tip;
-		if(req.body.like == 'on')
-			tip.like = true;
-		tip.save(function (err, venue) {
-			if(err) return console.log("error");
-			req.flash('success', { msg: 'Tip Updated.' });
-			res.redirect('/venue');
-		});
-	});
-};
 
-exports.postTip = function(req, res){
-	var newTip = new Tip({
-		name : 'Hotdog',
-		email : req.body.email,
-		date : new Date().today() + " @ " + new Date().timeNow(),
-		like : req.body.like == 'on',
-		tip : req.body.tip
-	});
-	console.log("email" + req.body.email);
-	console.log("tip" + newTip);
-	newTip.save(function (err, venue) {
-		if(err) return console.log("error");
-		req.flash('success', { msg: 'Tip Added.' });
-		res.redirect('/venue');
-	});
-}
 
 exports.go = function (req, res) {
   console.log(req.body)
