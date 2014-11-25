@@ -31,6 +31,7 @@ var levelController = require('./controllers/level');
 var venueController = require('./controllers/venue');
 var historyController = require('./controllers/history');
 var directionController = require('./controllers/direction');
+var detailController = require('./controllers/detail');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
@@ -123,14 +124,15 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
  */
 
 app.get('/', homeController.index);
-app.get('/cover', coverController.cover);
-app.get('/level', levelController.level);
+app.get('/cover', coverController.getCover);
+app.get('/level', levelController.getLevel);
 app.get('/level-all-data', levelController.levelAllData);
 app.post('/venue', venueController.go);
-app.get('/venue', venueController.venue);
+app.get('/venue', venueController.getVenue);
+app.get('/detail', detailController.getDetail);
 app.post('/addTip', venueController.postTip);
 app.get('/history', historyController.getHistory);
-app.get('/direction', directionController.direction);
+app.get('/direction', directionController.getDirection);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);

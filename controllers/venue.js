@@ -12,7 +12,7 @@ Date.prototype.timeNow = function () {
      return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes() +":"+ ((this.getSeconds() < 10)?"0":"") + this.getSeconds();
 }
 
-exports.venue = function(req, res) {
+exports.getVenue = function(req, res) {
 	Venue.findOne({name: 'Hotdog'}, function (err, currentVenue){
 		console.log(currentVenue);
 		res.render('venue', {venue: currentVenue});

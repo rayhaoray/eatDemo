@@ -1,4 +1,4 @@
-exports.direction = function(req, res) {
+exports.getDirection = function(req, res) {
       res.render('direction', {
               title: 'Direction'
             });

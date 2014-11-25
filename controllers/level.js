@@ -40,7 +40,7 @@ exports.levelAllData = function (req, res) {
   })
 }
 
-exports.level = function(req, res) {
+exports.getLevel = function(req, res) {
   Venue.find({}, function (err, venues) {
     res.render('level', {
       title: 'Level',

@@ -1,4 +1,4 @@
-exports.cover = function(req, res) {
+exports.getCover = function(req, res) {
       res.render('cover', {
               title: 'Welcome'
             });

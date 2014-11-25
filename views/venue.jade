@@ -9,7 +9,7 @@ block content
           h2="Top Venue"
           .row.clearfix
             .col-md-12.column
-              h3=venue[0].name
+              a.h3(href='/detail')=venue[0].name 
           #mapholder.map-frame
           .row.clearfix
             .col-md-12.column
@@ -48,7 +48,7 @@ block content
           .row.clearfix
             h2="Venues you may also like"
             .col-md-12.column
-              h3=venue[1].name
+              a.h3(href='/detail')=venue[1].name
               .row
                 .col-sm-6
                   p Likes: #{venue[1].like} 
@@ -58,7 +58,7 @@ block content
                   a.btn.btn-lg.btn-default(href='/direction') GO!
           .row.clearfix
             .col-md-12.column
-              h3=venue[2].name
+              a.h3(href='/detail')=venue[2].name
               .row
                 .col-sm-6
                   p Likes: #{venue[1].like} 
