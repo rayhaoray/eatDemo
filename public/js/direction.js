@@ -1,6 +1,10 @@
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
+var stepDisplay;
+var markerArray = [];
+
+
 window.onload = getLocation();
 var coor;
 function getLocation() {
@@ -24,6 +28,9 @@ function initialize(position) {
     };
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
     directionsDisplay.setMap(map);
+    directionsDisplay.setPanel(document.getElementById('directions-panel'));
+
+    stepDisplay = new google.maps.InfoWindow();
 
     var marker = new google.maps.Marker({
         position: currentCoor,
@@ -39,25 +46,58 @@ function initialize(position) {
 }
 
 function calcRoute() {
+    for (var i = 0; i < markerArray.length; i++) {
+        markerArray[i].setMap(null);
+    }
+
+    markerArray = [];
+
     var start = currentCoor;
     var endName = document.getElementById('end').value;
     var end;
     if(endName == 'neu')
+        //end = new google.maps.LatLng(42.273554, -71.029833);
         end = new google.maps.LatLng(42.339589, -71.088963);
     if(endName == 'bostonCommon')
         end = new google.maps.LatLng(42.354932, -71.065649);
     var request = {
         origin:start,
         destination:end,
-        travelMode: google.maps.TravelMode.DRIVING
+        travelMode: google.maps.TravelMode.WALKING
     };
     directionsService.route(request, function(response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
+            showSteps(response);
         }
     });
 }
 
+function showSteps(directionResult) {
+  // For each step, place a marker, and add the text to the marker's
+  // info window. Also attach the marker to an array so we
+  // can keep track of it and remove it when calculating new
+  // routes.
+  var myRoute = directionResult.routes[0].legs[0];
+
+  for (var i = 0; i < myRoute.steps.length; i++) {
+    var marker = new google.maps.Marker({
+      position: myRoute.steps[i].start_location,
+      map: map
+  });
+    attachInstructionText(marker, myRoute.steps[i].instructions);
+    markerArray[i] = marker;
+}
+}
+
+function attachInstructionText(marker, text) {
+  google.maps.event.addListener(marker, 'click', function() {
+    // Open an info window when the marker is clicked on,
+    // containing the text of the step.
+    stepDisplay.setContent(text);
+    stepDisplay.open(map, marker);
+});
+}
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function showError(error) {
