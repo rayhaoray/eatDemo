@@ -25,6 +25,8 @@
     self.showSelect2 = ko.observable(false)
     self.showSelect3 = ko.observable(false)
 
+    self.leftBtnValue = ko.observable('Select One')
+
     self.rightGo = function () {
       console.log()
       $('#right-form').submit()
@@ -33,6 +35,11 @@
     self.leftGo = function () {
       console.log()
       $('#left-form').submit()
+    }
+
+    self.leftBtn = function() {
+      var venuesSelect2 = $('#venues-selection')
+      venuesSelect2.select2('open')
     }
   }
 
@@ -43,6 +50,10 @@
     this.key = ko.observable(k)
     this.hasNext = ko.observable(v)
   }
+
+  vm.leftVenue.subscribe(function () {
+    vm.leftBtnValue($("#venues-selection").find(":selected").text())
+  })
 
   vm.levelSelection1.subscribe(function (newVal) {
     if (newVal !== 'Select One') {
@@ -97,6 +108,7 @@
 
   $(function () {
     $("#venues-selection").select2()
+    $(".select2-choice").css("display", "none")
   })
 
 })()

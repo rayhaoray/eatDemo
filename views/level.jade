@@ -9,7 +9,9 @@ block content
         .col-md-6.column.fill-left
           h3
             | I know what to eat.
-          select#venues-selection.btn.btn-default.dropdown-toggle.fill-width(data-bind='value: leftVenue')
+          div.btn-group.fill-width
+            button.btn.btn-default.dropdown-toggle.fill-width(data-bind='click: leftBtn, text: leftBtnValue') Select One
+          select#venues-selection.fill-width(data-bind='value: leftVenue')
             each venue in venues
               option(value=venue._id) #{venue.name}
           a.button.btn.btn-default.btn-bottom(data-bind='click: leftGo') Go! 
