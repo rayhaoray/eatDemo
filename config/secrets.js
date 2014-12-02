@@ -47,8 +47,8 @@ module.exports = {
   },
 
   facebook: {
-    clientID: process.env.FACEBOOK_ID || '754220301289665',
-    clientSecret: process.env.FACEBOOK_SECRET || '41860e58c256a3d7ad8267d3c1939a4a',
+    clientID: process.env.FACEBOOK_ID || '852992038079155',
+    clientSecret: process.env.FACEBOOK_SECRET || 'd01e06fd627be48a5bbc8883b8d506a6',
     callbackURL: '/auth/facebook/callback',
     passReqToCallback: true
   },
@@ -61,29 +61,29 @@ module.exports = {
   },
 
   github: {
-    clientID: process.env.GITHUB_ID || 'cb448b1d4f0c743a1e36',
-    clientSecret: process.env.GITHUB_SECRET || '815aa4606f476444691c5f1c16b9c70da6714dc6',
+    clientID: process.env.GITHUB_ID || 'b533d4722f94322797c9',
+    clientSecret: process.env.GITHUB_SECRET || 'c92cc7812c485e0ec1059c64354414e3181c4298',
     callbackURL: '/auth/github/callback',
     passReqToCallback: true
   },
 
   twitter: {
-    consumerKey: process.env.TWITTER_KEY || '6NNBDyJ2TavL407A3lWxPFKBI',
-    consumerSecret: process.env.TWITTER_SECRET  || 'ZHaYyK3DQCqv49Z9ofsYdqiUgeoICyh6uoBgFfu7OeYC7wTQKa',
+    consumerKey: process.env.TWITTER_KEY || 'L49MKg5zLifg8JBgNJRaWGDzj',
+    consumerSecret: process.env.TWITTER_SECRET  || 'mG2GINyX9UDdxgXU4dorWXgDFsvhLuodLpbgRcS9QXdhRU5BRQ',
     callbackURL: '/auth/twitter/callback',
     passReqToCallback: true
   },
 
   google: {
-    clientID: process.env.GOOGLE_ID || '828110519058.apps.googleusercontent.com',
-    clientSecret: process.env.GOOGLE_SECRET || 'JdZsIaWhUFIchmC1a_IZzOHb',
+    clientID: process.env.GOOGLE_ID || '629405108774-djrvuser5l2ghpo5j2begumoi054fkla.apps.googleusercontent.com',
+    clientSecret: process.env.GOOGLE_SECRET || 'iI-M3jpx9Us8TVWPz6ZTHjXh',
     callbackURL: '/auth/google/callback',
     passReqToCallback: true
   },
 
   linkedin: {
-    clientID: process.env.LINKEDIN_ID || '77chexmowru601',
-    clientSecret: process.env.LINKEDIN_SECRET || 'szdC8lN2s2SuMSy8',
+    clientID: process.env.LINKEDIN_ID || '774b54grp43pzp',
+    clientSecret: process.env.LINKEDIN_SECRET || 'eXbvIMoPgBaaf3Fj',
     callbackURL: '/auth/linkedin/callback',
     scope: ['r_fullprofile', 'r_emailaddress', 'r_network'],
     passReqToCallback: true
