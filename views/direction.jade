@@ -1,11 +1,12 @@
 extends layout
 block title
     title Directions
-    link(href='css/style.css', rel='stylesheet')
+    link(href='/css/style.css', rel='stylesheet')
     script(src='https://maps.googleapis.com/maps/api/js?v=3.exp')
-    script(type='text/javascript', src='js/direction.js')
+    script(type='text/javascript', src='/js/direction.js')
 
 block content
+    .div(id='address', display='none', data='#{address}')
     .row.clearfix
         .col-md-6.column.fill-left
           #panel.panel
