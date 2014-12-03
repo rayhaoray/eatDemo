@@ -30,15 +30,17 @@ block content
               input(type='hidden', name='_csrf', value=_csrf)
               .form-group
                 label.col-sm-3.control-label(for='tip') New Tip
-                .col-sm-4
+                .col-sm-6
                   input.form-control(name='tip', id='tip')
               .form-group
-                .checkbox
-                  label.col-sm-3.control-label(for='like') #{venue.like} Like
+                label.col-sm-3.control-label(for='like') #{venue.like} Like
+                .col-sm-6
+                  .checkbox
                   input.form-control(type='checkbox', name='like', id='like')
               .form-group
-                  label.col-sm-3.control-label() From: 
+                label.col-sm-3.control-label() From: 
                   - if(typeof(user) !== 'undefined'){
+                .col-sm-6
                       input.form-control(type='email', name='email', value='#{user.email}')
                   - }
               .form-group
