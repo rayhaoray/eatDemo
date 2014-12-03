@@ -22,10 +22,8 @@ exports.getVenue = function(req, res) {
 
 
 exports.go = function (req, res) {
-  console.log(req.body)
   if (req.body.venueId) {
     Venue.findById(req.body.venueId, function(err, venue) {
-      console.log(28, venue)
       if (venue) {
         res.render('venue', {venue: [venue]})
       } else {
@@ -37,7 +35,6 @@ exports.go = function (req, res) {
     var select2 = req.body.select2
     var select3 = req.body.select3
     Venue.find({ category: { "$in" : [select1]} }).sort({like: 'desc'}).exec(function (err, currentVenues){
-    	console.log(currentVenues);
     	res.render('venue', {venue: currentVenues});
     });
   }
