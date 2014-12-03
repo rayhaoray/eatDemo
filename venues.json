@@ -1,4 +1,4 @@
-{
+[{
   "_id": {
     "$oid": "54698763ffd8c165396f7475"
   },
@@ -26,7 +26,8 @@
     "Japanese",
     "Thai"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "54698986ffd8c165396f7476"
   },
@@ -55,7 +56,8 @@
     "Tea",
     "Convenience Stores"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "54698ddaffd8c165396f7477"
   },
@@ -82,7 +84,8 @@
       "Fast Food",
     "Chicken Wings"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547d229affd8c1a02929a991"
   },
@@ -109,7 +112,8 @@
       "Coffee",
     "Tea"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547d2393ffd8c1a02929a992"
   },
@@ -135,7 +139,8 @@
     "category": [
       "Pizza"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547d24caffd8c1a02929a993"
   },
@@ -162,7 +167,8 @@
       "Fast Food",
     "Mexican"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547d25e3ffd8c1a02929a994"
   },
@@ -188,7 +194,8 @@
     "category": [
       "Salads"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547d26b4ffd8c1a02929a995"
   },
@@ -214,7 +221,8 @@
     "category": [
       "Burgers"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547d2898ffd8c1a02929a996"
   },
@@ -234,7 +242,8 @@
     "category": [
       "Caters"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547d2d33ffd8c1a02929a997"
   },
@@ -261,7 +270,8 @@
       "Coffee",
     "Tea"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547d2ee5ffd8c1a02929a998"
   },
@@ -288,7 +298,8 @@
       "Coffee",
     "Sandwich"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547e4961ffd8c1a02929a999"
   },
@@ -314,7 +325,8 @@
     "category": [
       "Buffet"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547e4a93ffd8c1a02929a99a"
   },
@@ -341,7 +353,8 @@
       "Juice",
     "Smoothies"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547e4afdffd8c1a02929a99b"
   },
@@ -368,7 +381,8 @@
       "Coffee",
     "Tea"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547e4bd4ffd8c1a02929a99c"
   },
@@ -395,7 +409,8 @@
       "Fastfood",
     "Sandwiches"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547e4e31ffd8c1a02929a99d"
   },
@@ -424,7 +439,8 @@
     "Burgers",
     "Salads"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547e4f2cffd8c1a02929a99e"
   },
@@ -453,7 +469,8 @@
     "Sandwiches",
     "Salads"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547e508cffd8c1a02929a99f"
   },
@@ -483,7 +500,8 @@
     "Salads",
     "Pasta"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547e51a7ffd8c1a02929a9a0"
   },
@@ -509,7 +527,8 @@
     "category": [
       "Buffet"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547e523effd8c1a02929a9a1"
   },
@@ -535,7 +554,8 @@
     "category": [
       "Sandwiches"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547e542bffd8c1a02929a9a2"
   },
@@ -562,7 +582,8 @@
       "Food truck",
     "Sandwiches"
       ]
-}{
+},
+{
   "_id": {
     "$oid": "547e5580ffd8c1a02929a9a3"
   },
@@ -592,4 +613,4 @@
     "Pizzas",
     "Hot entrees"
       ]
-}
+}]
