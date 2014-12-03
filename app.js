@@ -132,6 +132,7 @@ app.get('/venue', venueController.getVenue);
 app.get('/detail', detailController.getDetail);
 app.post('/detail', detailController.postTip);
 app.get('/history', historyController.getHistory);
+app.post('/history/delete', historyController.postDeleteTip);
 app.get('/direction', directionController.getDirection);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);

@@ -8,11 +8,17 @@ block content
     #{tips[0].email}
       #tips
         for tip in tips
-          .row
-            .col-sm-6
-              h2 #{tip.name} 
-              p #{tip.tip}
-              p #{tip.date}
+          .page-header
+          h2 #{tip.name} 
+          p #{tip._id}
+          p #{tip.tip}
+          p #{tip.date}
+          form(action='/history/delete', method='POST')
+            input(type='hidden', name='_csrf', value=_csrf)
+            button.btn.btn-danger(type='submit')
+              span.ion-trash-b
+              | Delete
+
           //-h2
             | Venue: #{tip.name}
           //-h3
