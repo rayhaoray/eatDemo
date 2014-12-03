@@ -3,6 +3,7 @@ var directionsService = new google.maps.DirectionsService();
 var map;
 var stepDisplay;
 var markerArray = [];
+var geocoder = new google.maps.Geocoder();
 
 
 window.onload = getLocation();
@@ -46,6 +47,46 @@ function initialize(position) {
 }
 
 function calcRoute() {
+    var address = $('#address').attr('data')
+    var lat = null;
+    var lng = null;
+    console.log(address)
+
+    geocoder.geocode( {'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        console.log(results[0])
+        var location = results[0].geometry.location
+        console.log(location)
+        lat = location.k;
+        lng = location.B;
+        console.log(lat, lng)
+
+        for (var i = 0; i < markerArray.length; i++) {
+            markerArray[i].setMap(null);
+        }
+
+        markerArray = [];
+
+        var start = currentCoor;
+        var endName = document.getElementById('end').value;
+        var end;
+        console.log(81, lat, lng)
+        end = new google.maps.LatLng(lat, lng);
+        var request = {
+            origin:start,
+            destination:end,
+            travelMode: google.maps.TravelMode.WALKING
+        };
+        directionsService.route(request, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+                showSteps(response);
+            }
+        });
+      }
+    })
+
+    /*
     for (var i = 0; i < markerArray.length; i++) {
         markerArray[i].setMap(null);
     }
@@ -55,11 +96,13 @@ function calcRoute() {
     var start = currentCoor;
     var endName = document.getElementById('end').value;
     var end;
-    if(endName == 'neu')
-        //end = new google.maps.LatLng(42.273554, -71.029833);
-        end = new google.maps.LatLng(42.339589, -71.088963);
-    if(endName == 'bostonCommon')
-        end = new google.maps.LatLng(42.354932, -71.065649);
+    //if(endName == 'neu')
+    //    //end = new google.maps.LatLng(42.273554, -71.029833);
+    //    end = new google.maps.LatLng(42.339589, -71.088963);
+    //if(endName == 'bostonCommon')
+    //    end = new google.maps.LatLng(42.354932, -71.065649);
+    console.log(81, lat, lng)
+    end = new google.maps.LatLng(lat, lng);
     var request = {
         origin:start,
         destination:end,
@@ -71,6 +114,7 @@ function calcRoute() {
             showSteps(response);
         }
     });
+    */
 }
 
 function showSteps(directionResult) {
