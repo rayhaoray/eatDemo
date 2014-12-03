@@ -22,29 +22,29 @@ block content
                   p Phone: #{venue[0].telephone}
                   a.btn.btn-lg.btn-default(href='/direction') GO!
 
-
-        .col-md-6.column
-          .row.clearfix
-            h2="Venues you may also like"
-            .col-md-12.column
-              a.h3(href='/detail')=venue[1].name
-              .row
-                .col-sm-6
-                  p Likes: #{venue[1].like} 
-                  p Score: #{venue[1].score}
-                  p Address: #{venue[1].address}
-                  p Phone: #{venue[1].telephone}
-                  a.btn.btn-lg.btn-default(href='/direction') GO!
-          .row.clearfix
-            .col-md-12.column
-              a.h3(href='/detail')=venue[2].name
-              .row
-                .col-sm-6
-                  p Likes: #{venue[1].like} 
-                  p Score: #{venue[1].score}
-                  p Address: #{venue[1].address}
-                  p Phone: #{venue[1].telephone}
-                  a.btn.btn-lg.btn-default(href='/direction') GO!
+        if (venue.length > 1)
+          .col-md-6.column
+            .row.clearfix
+              h2="Venues you may also like"
+              .col-md-12.column
+                a.h3(href='/detail')=venue[1].name
+                .row
+                  .col-sm-6
+                    p Likes: #{venue[1].like} 
+                    p Score: #{venue[1].score}
+                    p Address: #{venue[1].address}
+                    p Phone: #{venue[1].telephone}
+                    a.btn.btn-lg.btn-default(href='/direction') GO!
+            .row.clearfix
+              .col-md-12.column
+                a.h3(href='/detail')=venue[2].name
+                .row
+                  .col-sm-6
+                    p Likes: #{venue[1].like} 
+                    p Score: #{venue[1].score}
+                    p Address: #{venue[1].address}
+                    p Phone: #{venue[1].telephone}
+                    a.btn.btn-lg.btn-default(href='/direction') GO!
     -}
     -else{
       h2 Oops!
