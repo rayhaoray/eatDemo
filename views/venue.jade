@@ -20,7 +20,7 @@ block content
                   p Score: #{venue[0].score}
                   p Address: #{venue[0].address}
                   p Phone: #{venue[0].telephone}
-                  a.btn.btn-lg.btn-default(href='/direction') GO!
+                  a.btn.btn-lg.btn-default(href='/direction/#{ venue[0]._id }') GO!
 
         if (venue.length > 1)
           .col-md-6.column
@@ -34,7 +34,7 @@ block content
                     p Score: #{venue[1].score}
                     p Address: #{venue[1].address}
                     p Phone: #{venue[1].telephone}
-                    a.btn.btn-lg.btn-default(href='/direction') GO!
+                    a.btn.btn-lg.btn-default(href='/direction/#{ venue[1]._id }') GO!
             .row.clearfix
               .col-md-12.column
                 a.h3(href='/detail')=venue[2].name
@@ -44,7 +44,7 @@ block content
                     p Score: #{venue[1].score}
                     p Address: #{venue[1].address}
                     p Phone: #{venue[1].telephone}
-                    a.btn.btn-lg.btn-default(href='/direction') GO!
+                    a.btn.btn-lg.btn-default(href='/direction/#{ venue[2]._id }') GO!
     -}
     -else{
       h2 Oops!
