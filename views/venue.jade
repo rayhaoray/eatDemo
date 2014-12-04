@@ -10,7 +10,7 @@ block content
           h2="Top Venue"
           .row.clearfix
             .col-md-12.column
-              a.h3(href='/detail')=venue[0].name 
+              a.h3(href='/venue/#{venue[0]._id}')=venue[0].name 
           #mapholder.map-frame
           .row.clearfix
             .col-md-12.column

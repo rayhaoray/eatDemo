@@ -129,7 +129,8 @@ app.get('/level', levelController.getLevel);
 app.get('/level-all-data', levelController.levelAllData);
 app.post('/venue', venueController.go);
 app.get('/venue', venueController.getVenue);
-app.get('/detail', detailController.getDetail);
+app.get('/venue/:venue_id', venueController.show)
+//app.get('/detail/:venue_id', detailController.getDetail);
 app.post('/detail', detailController.postTip);
 app.get('/history', historyController.getHistory);
 app.get('/direction/:venue_id', directionController.getDirection);

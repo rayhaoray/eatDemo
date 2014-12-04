@@ -19,7 +19,14 @@ exports.getVenue = function(req, res) {
 	});
 };
 
-
+exports.show = function(req, res) {
+  var venue_id = req.params['venue_id']
+  Venue.findById(venue_id, function(err, venue) {
+    res.render('detail', {
+      venue: venue
+    })
+  })
+}
 
 exports.go = function (req, res) {
   if (req.body.venueId) {
