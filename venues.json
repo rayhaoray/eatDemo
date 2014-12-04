@@ -19,10 +19,10 @@
       "sun": "Closed"
     },
     "category": [
-      "Asian Fusion",
+    "Asian",
     "Japanese",
     "Thai"
-      ]
+    ]
 },
 {
     "id": "001002",
@@ -45,11 +45,11 @@
       "sun": "10:00 am - 9:00 pm"
     },
     "category": [
-      "Bagels",
+    "Bagels",
     "Coffee",
     "Tea",
     "Convenience Stores"
-      ]
+    ]
 },
 {
     "id": "001003",
@@ -72,9 +72,10 @@
       "sun": "12:00 am - 07:00 pm"
     },
     "category": [
-      "Fast Food",
+    "Fast Food",
     "Chicken Wings"
-      ]
+    "Burgers"
+    ]
 },
 {
     "id": "001004",
@@ -97,9 +98,9 @@
       "sun": "10:30 am - 06:00 pm"
     },
     "category": [
-      "Coffee",
+    "Coffee",
     "Tea"
-      ]
+    ]
 },
 {
     "id": "001005",
@@ -122,8 +123,9 @@
       "sun": "12:00 am - 05:00 pm"
     },
     "category": [
-      "Pizza"
-      ]
+      "Pizza",
+      "Italian"
+    ]
 },
 {
     "id": "001006",
@@ -146,9 +148,9 @@
       "sun": "Closed"
     },
     "category": [
-      "Fast Food",
+    "Fast Food",
     "Mexican"
-      ]
+    ]
 },
 {
     "id": "001007",
@@ -172,7 +174,9 @@
     },
     "category": [
       "Salads"
-      ]
+      "Sandwich"
+      "Vegetarian"
+    ]
 },
 {
     "id": "001008",
@@ -196,6 +200,7 @@
     },
     "category": [
       "Burgers"
+      "Fast Food"
       ]
 },
 {
@@ -214,7 +219,7 @@
     },
     "category": [
       "Caters"
-      ]
+    ]
 },
 {
     "id": "002001",
@@ -238,8 +243,8 @@
     },
     "category": [
       "Coffee",
-    "Tea"
-      ]
+      "Tea"
+    ]
 },
 {
     "id": "003001",
@@ -263,8 +268,8 @@
     },
     "category": [
       "Coffee",
-    "Sandwich"
-      ]
+      "Sandwich"
+    ]
 },
 {
     "id": "003002",
@@ -288,7 +293,7 @@
     },
     "category": [
       "Buffet"
-      ]
+    ]
 },
 {
     "id": "004001",
@@ -312,8 +317,8 @@
     },
     "category": [
       "Juice",
-    "Smoothies"
-      ]
+      "Smoothies"
+    ]
 },
 {
     "id": "004002",
@@ -337,8 +342,8 @@
     },
     "category": [
       "Coffee",
-    "Tea"
-      ]
+      "Tea"
+    ]
 },
 {
     "id": "005001",
@@ -362,8 +367,8 @@
     },
     "category": [
       "Fastfood",
-    "Sandwiches"
-      ]
+      "Sandwiches"
+    ]
 },
 {
     "id": "006001",
@@ -387,10 +392,10 @@
     },
     "category": [
       "Fastfood",
-    "Sandwiches",
-    "Burgers",
-    "Salads"
-      ]
+      "Sandwiches",
+      "Burgers",
+      "Salads"
+    ]
 },
 {
     "id": "006002",
@@ -414,10 +419,10 @@
     },
     "category": [
       "Hot food",
-    "Pizza",
-    "Sandwiches",
-    "Salads"
-      ]
+      "Pizza",
+      "Sandwiches",
+      "Salads"
+    ]
 },
 {
     "id": "007001",
@@ -441,11 +446,11 @@
     },
     "category": [
       "Burger",
-    "Pizza",
-    "Sandwiches",
-    "Salads",
-    "Pasta"
-      ]
+      "Pizza",
+      "Sandwiches",
+      "Salads",
+      "Pasta"
+    ]
 },
 {
     "id": "004003",
@@ -469,7 +474,7 @@
     },
     "category": [
       "Buffet"
-      ]
+    ]
 },
 {
     "id": "004004",
@@ -493,7 +498,7 @@
     },
     "category": [
       "Sandwiches"
-      ]
+    ]
 },
 {
     "id": "008001",
@@ -517,8 +522,8 @@
     },
     "category": [
       "Food truck",
-    "Sandwiches"
-      ]
+      "Sandwiches"
+    ]
 },
 {
     "id": "009001",
@@ -542,9 +547,9 @@
     },
     "category": [
       "Cafes",
-    "Caterer",
-    "Sandwiches",
-    "Pizzas",
-    "Hot entrees"
-      ]
+      "Caterer",
+      "Sandwiches",
+      "Pizzas",
+      "Hot entrees"
+    ]
 }]
