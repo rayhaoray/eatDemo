@@ -10,6 +10,27 @@ block content
             .col-md-12.column
             h2=venue.name 
             h3 Photos 
+
+            #header-carousel.carousel.slide
+              ol.carousel-indicators
+                li.active(data-target="#header-carousel", data-slide-to="0")
+                li(data-target="#header-carousel", data-slide-to="1")
+                li(data-target="#header-carousel", data-slide-to="2")
+              .carousel-inner
+                .item.active
+                  img(src="#{venue.photo}", alt="0")
+                  .carousel-caption
+                .item
+                  img(src="#{venue.photo}", alt="1")
+                  .carousel-caption
+                .item       
+                  img(src="#{venue.photo}", alt="2")
+                  .carousel-caption
+              a.left.carousel-control(href="#header-carousel", data-slide="prev")
+                span.icon-prev
+              a.right.carousel-control(href="#header-carousel", data-slide="next")
+                span.icon-next
+
             .col-md-12.column
             h3 Details
             .row
