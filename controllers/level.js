@@ -13,7 +13,7 @@ var Venue = require('../models/Venue')
 exports.levelAllData = function (req, res) {
   res.send({
     //4: [720, 1080]
-      Fast: { 
+      Breakfast: { 
               burger: {
                         1: 'nice',
                         2: 'tip',
@@ -25,15 +25,42 @@ exports.levelAllData = function (req, res) {
                         6: 'bad'
                       }
             },
-      Chinese: { 
-              burger1: {
+      Coffee: { 
+              Coffee: {
                         7: 'nice',
-                        8: 'tip',
+                      },
+              Tea: {
+                        9: 'nice',
+                      },
+              Sandwich: {
+                        9: 'nice',
+                      }
+            },
+      Dinner: {
+              Fastfood: {
+                        9: 'bad'
+                      },  
+              Burger: {
                         9: 'bad'
                       },
-              pop1: {
-                        9: 'nice',
-                        10: 'tip',
+              Pizza: {
+                        11: 'bad'
+                      },
+              Buffet: {
+                        11: 'bad'
+                      }
+            },
+      Lunch: { 
+              Fastfood: {
+                        9: 'bad'
+                      },  
+              Burger: {
+                        9: 'bad'
+                      },
+              Pizza: {
+                        11: 'bad'
+                      },
+              Buffet: {
                         11: 'bad'
                       }
             }
