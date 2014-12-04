@@ -42,6 +42,9 @@ block content
           | Update Profile
 
   .page-header
+    h3 History 
+    a.button.btn.btn-default.btn-bottom(href='/history') View My History 
+
     h3 Change Password
 
   form.form-horizontal(action='/account/password', method='POST')
@@ -60,9 +63,7 @@ block content
           span.ion-locked
           | Change Password
 
-  .page-header
-    h3 History 
-      a.button.btn.btn-default.btn-bottom(href='/history') View My History 
+  
 
   .page-header
     h3 Delete Account
