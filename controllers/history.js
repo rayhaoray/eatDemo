@@ -11,9 +11,10 @@ exports.getHistory = function(req, res) {
 
 exports.postDeleteTip = function(req, res, next) {
 	//TODO get tip _id
-	console.log(req.body);
-  Tip.remove({ _id: req.body.tip._id }, function(err) {
+	console.log(req.body.tip_id);
+  Tip.remove({ _id: req.body.tip_id }, function(err) {
     if (err) return next(err);
     req.flash('info', { msg: 'Tip has been deleted.' });
+    res.redirect('/');
   });
 };

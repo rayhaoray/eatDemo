@@ -15,9 +15,12 @@ block content
           p #{tip.date}
           form(action='/history/delete', method='POST')
             input(type='hidden', name='_csrf', value=_csrf)
-            button.btn.btn-danger(type='submit')
-              span.ion-trash-b
-              | Delete
+            .form-group
+              .col-sm-4
+                input.form-control(type='text', name='tip_id', id='tip_id', value='#{tip._id}')
+                button.btn.btn-danger(type='submit')
+                  span.ion-trash-b
+                  | Delete
 
           //-h2
             | Venue: #{tip.name}
@@ -25,25 +28,3 @@ block content
             | Tip: #{tip.tip}
           //-p 
             | Time: #{tip.date}
-
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
