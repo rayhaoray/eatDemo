@@ -73,7 +73,7 @@
     },
     "category": [
     "Fast Food",
-    "Chicken Wings"
+    "Chicken Wings",
     "Burgers"
     ]
 },
@@ -173,8 +173,8 @@
       "sun": "Closed"
     },
     "category": [
-      "Salads"
-      "Sandwich"
+      "Salads",
+      "Sandwiches",
       "Vegetarian"
     ]
 },
@@ -199,7 +199,7 @@
       "sun": "12:00 am - 07:00 pm"
     },
     "category": [
-      "Burgers"
+      "Burgers",
       "Fast Food"
       ]
 },
