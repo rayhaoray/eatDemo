@@ -134,6 +134,7 @@ app.post('/detail', detailController.postTip);
 app.get('/history', historyController.getHistory);
 app.post('/history/delete', historyController.postDeleteTip);
 app.get('/direction', directionController.getDirection);
+app.get('/direction/:venue_id', directionController.getDirection);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
