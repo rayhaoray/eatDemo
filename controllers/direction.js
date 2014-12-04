@@ -5,6 +5,7 @@ exports.getDirection = function(req, res) {
   Venue.findById(venue_id, function(err, venue) {
     res.render('direction', {
       title: 'Direction',
+      venue_id: venue._id,
       address: venue.address
     });
   })
