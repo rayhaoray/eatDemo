@@ -1,11 +1,11 @@
 extends layout
 block title
-    title Directions
+    title Detail
     link(href='/css/style.css', rel='stylesheet')
 
 block content
-  .div(id='venue-id', display='none', data='#{venue._id}')
-  .div(id='csrf', display='none', data='#{_csrf}')
+  div(id='venue-id', display='none', data='#{venue._id}')
+  div(id='csrf', display='none', data='#{_csrf}')
     .row.clearfix
         .col-md-6.column.fill-left
           .row.clearfix
@@ -54,15 +54,22 @@ block content
             .col-md-12.column
             h3 My Tips
             h4 No tip yet? Add one now! 
-            input.form-control(type='checkbox', name='like', id='like', '#{like}')
+            
+            hr
+            .form-group
+              label.col-sm-3.control-label(for='like')  
+                span#like-count
+                Like
+            -if(like)
+              input.form-control(type='checkbox', name='like', id='like', checked)
+            -else
+              input.form-control(type='checkbox', name='like', id='like')
             form.form-horizontal(role='form', method='POST')
               input(type='hidden', name='_csrf', value=_csrf)
               .form-group
                 label.col-sm-3.control-label(for='tip') New Tip
                 .col-sm-6
                   input.form-control(name='tip', id='tip')
-              .form-group
-                label.col-sm-3.control-label(for='like') #{venue.like} Like
                 .col-sm-6
                   .checkbox
                     //- input.form-control(type='checkbox', name='like', id='like', #{like})

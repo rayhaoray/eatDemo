@@ -4,8 +4,7 @@ var _csrf = $('#csrf').attr("data")
 
 $('#like').on('change', function() {
   isUpdating = true
-  console.log(this.checked)
-  //$('#like').attr("disabled", true)
+  setView()
   $.ajax({
     url: '/venue/' + venue_id + '/likes',
     type: 'POST',
@@ -14,8 +13,17 @@ $('#like').on('change', function() {
       _csrf: _csrf
     },
     success: function(data) {
-      console.log(data)
       isUpdating = false
+      setView()
+      $("#like-count").html(data.likes)
     }
   })
 })
+
+function setView(likeCount) {
+  if (isUpdating) {
+    $('#like').attr("disabled", true)
+  } else {
+    $('#like').attr("disabled", false)
+  }
+}

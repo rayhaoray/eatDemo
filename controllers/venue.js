@@ -28,10 +28,11 @@ exports.show = function(req, res) {
       UserLikedVenue.find({user: user_id, venue: venue_id}, function(err, userLikedVenue) {
         var like = null;
         if (userLikedVenue) {
-          like = userLikedVenue.like ? 'checked' : ''
+          like = userLikedVenue.like
         } else {
-          like = ''
+          like = false
         }
+        console.log('like???', like)
         res.render('detail', {
           venue: venue,
           tips: tips,
@@ -91,10 +92,6 @@ exports.postTip = function(req, res){
       res.redirect('/venue/' + venue_id)
     })
   });
-
-  //userLikedVenue.save(function (err, userLikedVenue) {
-  //  if(err) return console.log("error");
-  //})
 }
 
 exports.postLike = function(req, res) {
