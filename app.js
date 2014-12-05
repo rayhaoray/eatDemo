@@ -131,7 +131,8 @@ app.post('/venue', venueController.go);
 app.get('/venue', venueController.getVenue);
 app.get('/venue/:venue_id', venueController.show)
 //app.get('/detail/:venue_id', detailController.getDetail);
-app.post('/detail', detailController.postTip);
+//app.post('/detail', detailController.postTip);
+app.post('/venue/:venue_id', venueController.postTip);
 app.get('/history', historyController.getHistory);
 app.post('/history/delete', historyController.postDeleteTip);
 app.get('/direction', directionController.getDirection);

@@ -24,7 +24,7 @@ exports.updateTip = function(req, res){
 };
 
 exports.postTip = function(req, res){
-	var currentEmail;
+	//var currentEmail;
 	//TODO check not working
 	if(req.body.email === 'undefined')
 		currentEmail = "Anonymous";

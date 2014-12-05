@@ -59,12 +59,6 @@ block content
                   .checkbox
                   input.form-control(type='checkbox', name='like', id='like')
               .form-group
-                label.col-sm-3.control-label() From: 
-                  - if(typeof(user) !== 'undefined'){
-                .col-sm-6
-                      input.form-control(type='email', name='email', value='#{user.email}')
-                  - }
-              .form-group
                 .col-sm-offset-3.col-sm-4
                   button.btn.btn.btn-primary(type='submit')
                       | Add Tip 
