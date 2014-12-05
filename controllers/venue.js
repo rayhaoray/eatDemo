@@ -22,8 +22,12 @@ exports.getVenue = function(req, res) {
 exports.show = function(req, res) {
   var venue_id = req.params['venue_id']
   Venue.findById(venue_id, function(err, venue) {
-    res.render('detail', {
-      venue: venue
+    Tip.find({venue: venue._id}).populate('user').exec(function(err, tips) {
+      console.log(tips)
+      res.render('detail', {
+        venue: venue,
+        tips: tips
+      })
     })
   })
 }
@@ -56,11 +60,11 @@ exports.postTip = function(req, res){
   //  currentEmail = req.body.email;	
   //}
   var newTip = new Tip({
-    venue_id: venue_id,
-    user_id: user_id,
+    venue: venue_id,
+    user: user_id,
     date : new Date().today() + " @ " + new Date().timeNow(),
     like : req.body.like == 'on',
-    tip : req.body.tip
+    content : req.body.tip
   });
   newTip.save(function (err, tip) {
     if(err) return console.log("error");
