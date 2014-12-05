@@ -58,8 +58,8 @@ block content
             hr
             .form-group
               label.col-sm-3.control-label(for='like')  
-                span#like-count
-                Like
+                span#like-count #{likes}
+                | &nbsp;Like
             -if(like)
               input.form-control(type='checkbox', name='like', id='like', checked)
             -else

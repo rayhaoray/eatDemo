@@ -26,18 +26,22 @@ exports.show = function(req, res) {
   Venue.findById(venue_id, function(err, venue) {
     Tip.find({venue: venue._id}).populate('user').exec(function(err, tips) {
       UserLikedVenue.find({user: user_id, venue: venue_id}, function(err, userLikedVenue) {
-        var like = null;
-        if (userLikedVenue) {
-          like = userLikedVenue.like
-        } else {
-          like = false
-        }
-        console.log('like???', like)
-        res.render('detail', {
-          venue: venue,
-          tips: tips,
-          //userLikedVenue: userLikedVenue
-          like: like
+        UserLikedVenue.find({venue: venue_id, like: true}, function(err, likes) {
+          var like = null;
+          console.log(userLikedVenue)
+          if (userLikedVenue.length > 0) {
+            like = userLikedVenue[0].like
+          } else {
+            like = false
+          }
+          console.log('like???', like)
+          res.render('detail', {
+            venue: venue,
+            tips: tips,
+            //userLikedVenue: userLikedVenue
+            like: like,
+            likes: likes.length
+          })
         })
       })
     })
