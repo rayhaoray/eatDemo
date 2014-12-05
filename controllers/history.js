@@ -16,6 +16,6 @@ exports.postDeleteTip = function(req, res, next) {
   Tip.remove({ _id: req.body.tip_id }, function(err) {
     if (err) return next(err);
     req.flash('info', { msg: 'Tip has been deleted.' });
-    res.redirect('/');
+    res.redirect('/history');
   });
 };

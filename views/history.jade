@@ -15,7 +15,7 @@ block content
           input(type='hidden', name='_csrf', value=_csrf)
           .form-group
             .col-sm-4
-              input.form-control(type='text', name='tip_id', id='tip_id', value='#{tip._id}')
+              input.form-control(type='hidden', name='tip_id', id='tip_id', value='#{tip._id}')
               button.btn.btn-danger(type='submit')
                 span.ion-trash-b
                 | Delete
