@@ -1,5 +1,6 @@
 var Venue = require('../models/Venue');
 var Tip = require('../models/Tip');
+var UserLikedVenue = require('../models/UserLikedVenue')
 
 
 // For todays date;
@@ -21,12 +22,22 @@ exports.getVenue = function(req, res) {
 
 exports.show = function(req, res) {
   var venue_id = req.params['venue_id']
+  var user_id = req.user._id
   Venue.findById(venue_id, function(err, venue) {
     Tip.find({venue: venue._id}).populate('user').exec(function(err, tips) {
-      console.log(tips)
-      res.render('detail', {
-        venue: venue,
-        tips: tips
+      UserLikedVenue.find({user: user_id, venue: venue_id}, function(err, userLikedVenue) {
+        var like = null;
+        if (userLikedVenue) {
+          like = userLikedVenue.like ? 'checked' : ''
+        } else {
+          like = ''
+        }
+        res.render('detail', {
+          venue: venue,
+          tips: tips,
+          //userLikedVenue: userLikedVenue
+          like: like
+        })
       })
     })
   })
@@ -59,13 +70,20 @@ exports.postTip = function(req, res){
   //} else {
   //  currentEmail = req.body.email;	
   //}
+  console.log(req.body)
+  //var userLikedVenue = new UserLikedVenue({
+  //  user: user_id,
+  //  venue: venue_id,
+  //  like: req.body.like == 'on'
+  //})
+
   var newTip = new Tip({
     venue: venue_id,
     user: user_id,
     date : new Date().today() + " @ " + new Date().timeNow(),
-    like : req.body.like == 'on',
     content : req.body.tip
   });
+
   newTip.save(function (err, tip) {
     if(err) return console.log("error");
     req.flash('success', { msg: 'Tip Added.' });
@@ -73,4 +91,37 @@ exports.postTip = function(req, res){
       res.redirect('/venue/' + venue_id)
     })
   });
+
+  //userLikedVenue.save(function (err, userLikedVenue) {
+  //  if(err) return console.log("error");
+  //})
+}
+
+exports.postLike = function(req, res) {
+  var venue_id = req.params['venue_id']
+  var user_id = req.user._id
+
+  console.log('like?', req.body.like)
+
+  UserLikedVenue.find({user: user_id, venue: venue_id}, function(err, userLikedVenue) {
+    console.log(userLikedVenue)
+    if (userLikedVenue.length !== 0) {
+      userLikedVenue = userLikedVenue[0]
+      userLikedVenue.like = req.body.like
+    } else {
+      userLikedVenue = new UserLikedVenue({
+        user: user_id,
+        venue: venue_id,
+        like: req.body.like
+      })
+    }
+    userLikedVenue.save(function (err, userLikedVenue) {
+      UserLikedVenue.find({venue: venue_id, like: true}, function(err, likes) {
+        console.log('likes', likes)
+        res.send({
+          likes: likes.length
+        })
+      })
+    })
+  })
 }

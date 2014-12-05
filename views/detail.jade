@@ -4,6 +4,8 @@ block title
     link(href='/css/style.css', rel='stylesheet')
 
 block content
+  .div(id='venue-id', display='none', data='#{venue._id}')
+  .div(id='csrf', display='none', data='#{_csrf}')
     .row.clearfix
         .col-md-6.column.fill-left
           .row.clearfix
@@ -52,6 +54,7 @@ block content
             .col-md-12.column
             h3 My Tips
             h4 No tip yet? Add one now! 
+            input.form-control(type='checkbox', name='like', id='like', '#{like}')
             form.form-horizontal(role='form', method='POST')
               input(type='hidden', name='_csrf', value=_csrf)
               .form-group
@@ -62,8 +65,11 @@ block content
                 label.col-sm-3.control-label(for='like') #{venue.like} Like
                 .col-sm-6
                   .checkbox
-                  input.form-control(type='checkbox', name='like', id='like')
+                    //- input.form-control(type='checkbox', name='like', id='like', #{like})
               .form-group
                 .col-sm-offset-3.col-sm-4
                   button.btn.btn.btn-primary(type='submit')
                       | Add Tip 
+
+block script
+  script(type='text/javascript', src='/js/like.js')
