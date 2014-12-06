@@ -6,6 +6,7 @@ exports.getDirection = function(req, res) {
     res.render('direction', {
       title: 'Direction',
       venue_id: venue._id,
+      venue_name: venue.name,
       address: venue.address
     });
   })
