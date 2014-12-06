@@ -51,7 +51,13 @@ exports.go = function (req, res) {
   if (req.body.venueId) {
     Venue.findById(req.body.venueId, function(err, venue) {
       if (venue) {
-        res.render('venue', {venue: [venue]})
+        var allVenues = [];
+        allVenues.push(venue);
+        Venue.find({category: {"$in" : [venue.category[0]]}}).sort('-like').exec(function (err, currentVenues){
+          allVenues.push(currentVenues[0]);
+          allVenues.push(currentVenues[1]);
+          res.render('venue', {venue: allVenues})
+        })
       } else {
         // error handler
       }
@@ -74,6 +80,7 @@ exports.go = function (req, res) {
         break;
       default:
         Venue.find({category: { "$in" : [select1]} } && { category: { "$in" : [select2]} }).sort('-like').exec(function (err, currentVenues){
+          console.log(currentVenues)
           res.render('venue', {venue: currentVenues});
         }); 
     }
