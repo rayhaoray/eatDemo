@@ -19,7 +19,7 @@
     }
 
     self.level3Click = function() {
-      self.levelSelection3(this.key())
+      self.levelSelection3('Sort by ' + this.key())
     }
 
     self.showSelect2 = ko.observable(false)
@@ -73,9 +73,10 @@
 
   vm.levelSelection2.subscribe(function (newVal) {
     if (newVal !== 'Select One') {
-      vm.levelSelection3('Select One')
+      vm.levelSelection3('(Optional) Sort By:') 
       vm.showSelect3(true)
-      var l3 = selections[vm.levelSelection1()][newVal]
+      //var l3 = selections[vm.levelSelection1()][newVal]
+      var l3 = {'Likes (Default)': 0, 'Name': 1, 'Score': 2} 
       var keys = []
       for (var k in l3) {
         keys.push(new optionModel(k, k))

@@ -60,9 +60,23 @@ exports.go = function (req, res) {
     var select1 = req.body.select1
     var select2 = req.body.select2
     var select3 = req.body.select3
-    Venue.find({ category: { "$in" : [select1]} }).sort({like: 'desc'}).exec(function (err, currentVenues){
-      res.render('venue', {venue: currentVenues});
-    });
+
+    switch(req.body.select3) {
+      case 'Sort by Name':
+        Venue.find({category: { "$in" : [select1]} } && { category: { "$in" : [select2]} }).sort('name').exec(function (err, currentVenues){
+          res.render('venue', {venue: currentVenues});
+        });
+        break;
+      case 'Sort by Score':
+        Venue.find({category: { "$in" : [select1]} } && { category: { "$in" : [select2]} }).sort('-score').exec(function (err, currentVenues){
+          res.render('venue', {venue: currentVenues});
+        });
+        break;
+      default:
+        Venue.find({category: { "$in" : [select1]} } && { category: { "$in" : [select2]} }).sort('-like').exec(function (err, currentVenues){
+          res.render('venue', {venue: currentVenues});
+        }); 
+    }
   }
 }
 

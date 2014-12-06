@@ -14,54 +14,53 @@ exports.levelAllData = function (req, res) {
   res.send({
     //4: [720, 1080]
       Breakfast: { 
-              burger: {
-                        1: 'nice',
-                        2: 'tip',
-                        3: 'bad'
+              Coffee: {
+                        1: '',
                       },
-              pop: {
-                        4: 'nice',
-                        5: 'tip',
-                        6: 'bad'
-                      }
+              Tea: {
+                        2: '',
+                      },
+              Sandwich: {
+                        3: '',
+              }
             },
       Coffee: { 
               Coffee: {
-                        7: 'nice',
+                        1: '',
                       },
               Tea: {
-                        9: 'nice',
+                        2: '',
                       },
               Sandwich: {
-                        9: 'nice',
+                        3: '',
                       }
             },
       Dinner: {
               Fastfood: {
-                        9: 'bad'
+                        1: ''
                       },  
               Burger: {
-                        9: 'bad'
+                        2: ''
                       },
               Pizza: {
-                        11: 'bad'
+                        3: ''
                       },
               Buffet: {
-                        11: 'bad'
+                        4: ''
                       }
             },
       Lunch: { 
               Fastfood: {
-                        9: 'bad'
+                        1: ''
                       },  
               Burger: {
-                        9: 'bad'
+                        2: ''
                       },
               Pizza: {
-                        11: 'bad'
+                        3: ''
                       },
               Buffet: {
-                        11: 'bad'
+                        4: ''
                       }
             }
   })
