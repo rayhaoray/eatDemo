@@ -71,6 +71,9 @@ exports.go = function (req, res) {
     var select2 = req.body.select2
     var select3 = req.body.select3
 
+    if(select2 == 'Select One')
+      select2 = select1
+
     switch(req.body.select3) {
       case 'Sort by Name':
         Venue.find({category: { "$in" : [select1]} } && { category: { "$in" : [select2]} }).sort('name').exec(function (err, currentVenues){
