@@ -34,7 +34,6 @@ exports.show = function(req, res) {
           } else {
             like = false
           }
-          console.log('like???', like)
           res.render('detail', {
             venue: venue,
             tips: tips,
