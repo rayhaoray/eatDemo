@@ -6,9 +6,12 @@ var venueSchema = new mongoose.Schema({
   like: Number,
   score: Number,
   visit: Number,
+  building: String,
   address: String,
   telephone: String,
   website: String,
+  openhour: Object,
+  opennow: String, 
   photo: String,
   category: Array
 },

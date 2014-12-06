@@ -40,7 +40,17 @@ block content
                   p Likes: #{venue.like} 
                   p Score: #{venue.score}
                   p Address: #{venue.address}
+                  p Building: #{venue.building}
                   p Phone: #{venue.telephone}
+                  p OpenHour: Now #{venue.openhour.mon} 
+                  ul 
+                    li Monday: #{venue.openhour.mon}
+                    li Tuesday: #{venue.openhour.tue}
+                    li Wednesday: #{venue.openhour.wed}
+                    li Thursday: #{venue.openhour.thu}
+                    li Friday: #{venue.openhour.fri}
+                    li Saturday: #{venue.openhour.sat}
+                    li Sunday: #{venue.openhour.sun}
         
         .col-md-6.column.fill-right
           .row.clearfix

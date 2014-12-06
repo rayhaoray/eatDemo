@@ -20,31 +20,31 @@ block content
                   p Score: #{venue[0].score}
                   p Address: #{venue[0].address}
                   p Phone: #{venue[0].telephone}
-                  a.btn.btn-lg.btn-default(href='/direction/#{ venue[0]._id }') GO!
+                  a.btn.btn-lg.btn-default(href='/direction/#{venue[0]._id}') GO!
 
         if (venue.length > 1)
           .col-md-6.column
             .row.clearfix
               h2="Venues you may also like"
               .col-md-12.column
-                a.h3(href='/detail')=venue[1].name
+                a.h3(href='/venue/#{venue[1]._id}')=venue[1].name
                 .row
                   .col-sm-6
                     p Likes: #{venue[1].like} 
                     p Score: #{venue[1].score}
                     p Address: #{venue[1].address}
                     p Phone: #{venue[1].telephone}
-                    a.btn.btn-lg.btn-default(href='/direction/#{ venue[1]._id }') GO!
+                    a.btn.btn-lg.btn-default(href='/direction/#{venue[1]._id}') GO!
             .row.clearfix
               .col-md-12.column
-                a.h3(href='/detail')=venue[2].name
+                a.h3(href='/venue/#{venue[2]._id}')=venue[2].name
                 .row
                   .col-sm-6
-                    p Likes: #{venue[1].like} 
-                    p Score: #{venue[1].score}
-                    p Address: #{venue[1].address}
-                    p Phone: #{venue[1].telephone}
-                    a.btn.btn-lg.btn-default(href='/direction/#{ venue[2]._id }') GO!
+                    p Likes: #{venue[2].like} 
+                    p Score: #{venue[2].score}
+                    p Address: #{venue[2].address}
+                    p Phone: #{venue[2].telephone}
+                    a.btn.btn-lg.btn-default(href='/direction/#{venue[2]._id}') GO!
     -}
     -else{
       h2 Oops!
