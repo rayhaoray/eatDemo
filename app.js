@@ -37,6 +37,12 @@ var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 
 /**
+ * Load middlewares
+ */
+
+var loginCheck = require('./middlewares/login-check.js')
+
+/**
  * API keys and Passport configuration.
  */
 
@@ -129,9 +135,7 @@ app.get('/level', levelController.getLevel);
 app.get('/level-all-data', levelController.levelAllData);
 app.post('/venue', venueController.go);
 app.get('/venue', venueController.getVenue);
-app.get('/venue/:venue_id', venueController.show)
-//app.get('/detail/:venue_id', detailController.getDetail);
-//app.post('/detail', detailController.postTip);
+app.get('/venue/:venue_id', loginCheck()).get('/venue/:venue_id', venueController.show)
 app.post('/venue/:venue_id', venueController.postTip);
 app.post('/venue/:venue_id/likes', venueController.postLike);
 app.get('/history', historyController.getHistory);
