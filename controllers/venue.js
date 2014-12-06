@@ -54,8 +54,12 @@ exports.go = function (req, res) {
         var allVenues = [];
         allVenues.push(venue);
         Venue.find({category: {"$in" : [venue.category[0]]}}).sort('-like').exec(function (err, currentVenues){
-          allVenues.push(currentVenues[0]);
-          allVenues.push(currentVenues[1]);
+          var i;
+          for(i=0; i<3; i++){
+          if(currentVenues[i].id != allVenues[0].id){
+              allVenues.push(currentVenues[i]);
+            }
+          }
           res.render('venue', {venue: allVenues})
         })
       } else {
