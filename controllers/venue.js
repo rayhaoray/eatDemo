@@ -163,6 +163,13 @@ exports.postLike = function(req, res) {
     }
     userLikedVenue.save(function (err, userLikedVenue) {
       UserLikedVenue.find({venue: venue_id, like: true}, function(err, likes) {
+        Venue.findById(venue_id, function (err, currentVenue){
+          if(currentVenue)
+            currentVenue.like = likes.length
+          currentVenue.save(function (err, currentVenue){
+            console.log(currentVenue.like)
+          })
+        })
         res.send({
           likes: likes.length
         })
@@ -206,7 +213,14 @@ exports.postRating = function(req, res) {
           average = 'N/A'
         } else {
           average = sum/len
-        } 
+        }
+
+        Venue.findById(venue_id, function (err, currentVenue){
+          if(currentVenue)
+            currentVenue.score = average 
+          currentVenue.save(function (err, currentVenue){
+          })
+        }) 
 
         res.send({
           rate: req.body.rate,
