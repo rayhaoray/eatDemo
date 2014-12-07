@@ -1,11 +1,9 @@
 .fillvh-left { 
     height: 80vh;
-    background-color: #eeeeee;
 }
 
 .fillvh-right { 
     height: 80vh;
-    background-color: #cccccc;
 }
 
 
@@ -17,7 +15,7 @@
 
 
 .popular-tip-scroll { 
-    height: 30vh;
+    height: 40vh;
     overflow: scroll;
     background-color: #fff;
 }
@@ -98,3 +96,12 @@
 .divForAlsoLike{
     padding-left: 20px;
 }
+.removeMargin{
+    margin-bottom: 0px;
+    background-color: #FDF4EE;
+}
+.changeBgcolor{
+    background-color: #fff;
+    height:88vh;
+}
+

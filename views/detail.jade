@@ -29,29 +29,39 @@ block content
               a.right.carousel-control(href="#header-carousel", data-slide="next")
                 span.icon-next
     div.row(id='secondRow')
-      div.col-md-4(id='divForDetails')
-            h3 Details
-              p Likes: #{venue.like} 
-              p Score: #{venue.score}
-              p Address: #{venue.address}
-              p Building: #{venue.building}
-              p Phone: #{venue.telephone}
-              p Open Now?
-            hr
-            h3 Popular Tips
-            div.popular-tip-scroll
-              ul
-                for tip in tips
-                  li #{tip.content} 
-                     br
-                     |@#{tip.date} 
-                     br
-                     |by #{tip.user.profile.name === '' ? 'Anonymous User' : tip.user.profile.name}
 
-      div.col-md-5(id='divForTips')
-        h3 My Tips
-        p Do you like #{venue.name}?
-        img#likeImg(src='')
+      div.col-md-4(id='divForOpenhour')
+        h3 Details
+        ul
+          li Likes: #{venue.like} 
+          li Score: #{venue.score}
+          li Address: #{venue.address}
+          li Building: #{venue.building}
+          li Phone: #{venue.telephone}
+        hr    
+        h3 Open Hour
+        ul 
+          li Mon: #{venue.openhour.mon}
+          li Tue: #{venue.openhour.tue}
+          li Wed: #{venue.openhour.wed}
+          li Thu: #{venue.openhour.thu}
+          li Fri: #{venue.openhour.fri}
+          li Sat: #{venue.openhour.sat}
+          li Sun: #{venue.openhour.sun}
+          
+      div.col-md-4(id='divForDetails')
+        h3 Popular Tips
+        div.popular-tip-scroll
+          ul
+            for tip in tips
+              li #{tip.content} 
+                br
+                |@#{tip.date} 
+                br
+                |by #{tip.user.profile.name === '' ? 'Anonymous User' : tip.user.profile.name}
+
+      div.col-md-4(id='divForTips')
+        h3 Do you like #{venue.name}?
         .form-group
           -if(like)
             input.likeSign(type='checkbox', name='like', id='like', value='1', checked)
@@ -64,28 +74,17 @@ block content
         form.form-horizontal(role='form', method='POST')
           input(type='hidden', name='_csrf', value=_csrf)
           h3 Leave your tips!
-          textarea(name='tip', id='tip', rows='10', cols='50', 
+          textarea.noneResize(name='tip', id='tip', rows='10', cols='35', 
             aria-describedby='TipHelpBlock', wrap='hard',
             placeholder='Your tips help others to learn more about this venue!' required)
           span.help-block(id='TipHelpBlock') We appreciate your tips!
           .col-sm-6
           .col-sm-offset-3.col-sm-4
           button.btn.btn-primary.setwith200(type='submit')
-            | Add Tip
+            | Add Tip »
 
 
 
-      div.col-md-3(id='divForOpenhour')
-        h3 Open Hour
-        ul 
-          li Mon: #{venue.openhour.mon}
-          li Tue: #{venue.openhour.tue}
-          li Wed: #{venue.openhour.wed}
-          li Thu: #{venue.openhour.thu}
-          li Fri: #{venue.openhour.fri}
-          li Sat: #{venue.openhour.sat}
-          li Sun: #{venue.openhour.sun}
-          
           
 
 block script

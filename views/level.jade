@@ -6,26 +6,28 @@ block title
 
 block content
     .row.clearfix
-        .col-md-6.column.fillvh-left
+        .col-md-6.column.fillvh-left.bgColorLeft
           h3
             | I know what to eat.
+          br
+          br
           div.btn-group.fill-width
-            button.btn.btn-default.dropdown-toggle.fill-width(data-bind='click: leftBtn, text: leftBtnValue') Select One
+            button.btn.btn-dark.dropdown-toggle.fill-width(data-bind='click: leftBtn, text: leftBtnValue') Select One
           select#venues-selection.fill-width(data-bind='value: leftVenue')
             each venue in venues
               option(value=venue._id) #{venue.name}
-          a.button.btn.btn-primary.btn-bottom(data-bind='click: leftGo') Go! 
+          a.button.btn.btn-primary.btn-bottom(data-bind='click: leftGo') Go »
           form#left-form(action='/venue', method='POST', display: none)
             input(type='hidden', name='_csrf', value=_csrf)
             input(type='hidden', name='venueId', data-bind='value: leftVenue')
         
-        .col-md-6.column.fillvh-right
+        .col-md-6.column.fillvh-right.bgColorRight
           h3
             | Show me what do you have.
           br
           br
           div.btn-group.fill-width
-            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection1') Select One
+            button.btn.btn-dark.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection1') Select One
             ul.dropdown-menu.fill-width(data-bind='foreach: level1')
               li
                 a(data-bind='text: $data.key, event: {click: $parent.level1Click}')
@@ -33,7 +35,7 @@ block content
           br
           br
           div.btn-group.fill-width
-            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection2, visible: showSelect2()') Select One
+            button.btn.btn-dark.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection2, visible: showSelect2()') Select One
             ul.dropdown-menu.fill-width(data-bind='foreach: level2')
               li
                 a(data-bind='text: $data.key, event: {click: $parent.level2Click}')
@@ -41,7 +43,7 @@ block content
           br
           br
           div.btn-group.fill-width
-            button.btn.btn-default.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection3, visible: showSelect3()') Select One
+            button.btn.btn-dark.dropdown-toggle.fill-width(data-toggle='dropdown', data-bind='text: levelSelection3, visible: showSelect3()') Select One
             ul.dropdown-menu.fill-width(data-bind='foreach: level3')
               li
                 a(data-bind='text: $data.key, event: {click: $parent.level3Click}')
@@ -52,7 +54,7 @@ block content
             span(data-bind='text: details')
           br
           br 
-          a.button.btn.btn-primary.btn-bottom(data-bind='click: rightGo') Go! 
+          a.button.btn.btn-primary.btn-bottom(data-bind='click: rightGo') Go » 
 
           form#right-form(action='/venue', method='POST', display: none)
             input(type='hidden', name='_csrf', value=_csrf)
