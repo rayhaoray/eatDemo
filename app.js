@@ -138,6 +138,7 @@ app.get('/venue', venueController.getVenue);
 app.get('/venue/:venue_id', loginCheck()).get('/venue/:venue_id', venueController.show)
 app.post('/venue/:venue_id', venueController.postTip);
 app.post('/venue/:venue_id/likes', venueController.postLike);
+app.post('/venue/:venue_id/rates', venueController.postRating);
 app.get('/history', historyController.getHistory);
 app.post('/history/delete', historyController.postDeleteTip);
 app.get('/direction', directionController.getDirection);

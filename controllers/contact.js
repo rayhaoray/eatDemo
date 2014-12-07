@@ -1,10 +1,10 @@
 var secrets = require('../config/secrets');
 var nodemailer = require("nodemailer");
 var transporter = nodemailer.createTransport({
-  service: 'SendGrid',
+  service: 'Mailgun',
   auth: {
-    user: secrets.sendgrid.user,
-    pass: secrets.sendgrid.password
+    user: secrets.mailgun.user,
+    pass: secrets.mailgun.password
   }
 });
 
@@ -48,8 +48,8 @@ exports.postContact = function(req, res) {
   var mailOptions = {
     to: to,
     from: from,
-    subject: subject,
-    text: body
+    subject: subject + ' | from ' + name,
+    text: body 
   };
 
   transporter.sendMail(mailOptions, function(err) {
