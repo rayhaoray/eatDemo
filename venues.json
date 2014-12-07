@@ -10,9 +10,9 @@
         "telephone": "(617) 373-2000",
         "website": "http://www.kigokitchen.com/northeastern/",
         "photo": [
-            "/image/buildingMaps/001.png",
-            "/image/buildingMaps/002.png",
-            "/image/buildingMaps/003.png"
+            "/image/detail/001001/1.jpg",
+            "/image/detail/001001/2.jpg",
+            "/image/detail/001001/3.jpg"
         ],
         "map": "image/buildingMaps/001.png",
         "openhour": {
@@ -42,7 +42,11 @@
         "address": "346 Huntington Ave, Boston, MA 02115",
         "telephone": "(617) 373-7644",
         "website": "",
-        "photo": "",
+        "photo": [
+            "/image/detail/001002/1.jpg",
+            "/image/detail/001002/2.jpg",
+            "/image/detail/001002/3.jpg"
+        ],
         "map": "image/buildingMaps/001.png",
         "openhour": {
             "mon": "7:00 am - 10:00 pm",
@@ -73,7 +77,11 @@
         "address": "346 Huntington Ave, Boston, MA 02115",
         "telephone": "(617) 373-2233",
         "website": "http://popeyes.com/menu",
-        "photo": "",
+        "photo": [
+            "/image/detail/001003/1.jpg",
+            "/image/detail/001003/2.jpg",
+            "/image/detail/001003/3.jpg"
+        ],
         "map": "image/buildingMaps/001.png",
         "openhour": {
             "mon": "10:30 am - 09:00 pm",
@@ -102,7 +110,11 @@
         "address": "346 Huntington Ave, Boston, MA 02115",
         "telephone": "(617) 373-2530",
         "website": "http://www.starbucks.com/menu",
-        "photo": "",
+        "photo": [
+            "/image/detail/001004/1.jpg",
+            "/image/detail/001004/2.jpg",
+            "/image/detail/001004/3.jpg"
+        ],
         "map": "image/buildingMaps/001.png",
         "openhour": {
             "mon": "07:00 am - 10:00 pm",
@@ -128,7 +140,11 @@
         "address": "346 Huntington Ave, Boston, MA 02115",
         "telephone": "(617) 373-5969",
         "website": "",
-        "photo": "",
+        "photo": [
+            "/image/detail/001005/1.jpg",
+            "/image/detail/001005/2.jpg",
+            "/image/detail/001005/3.jpg"
+        ],
         "map": "image/buildingMaps/001.png",
         "openhour": {
             "mon": "10:30 am - 08:00 pm",
@@ -156,7 +172,11 @@
         "address": "346 Huntington Ave, Boston, MA 02115",
         "telephone": "(617) 373-2000",
         "website": "http://www.tacobell.com/",
-        "photo": "",
+        "photo": [
+            "/image/detail/001006/1.jpg",
+            "/image/detail/001006/2.jpg",
+            "/image/detail/001006/3.jpg"
+        ],
         "map": "image/buildingMaps/001.png",
         "openhour": {
             "mon": "10:30 am - 08:00 pm",
@@ -184,7 +204,11 @@
         "address": "346 Huntington Ave, Boston, MA 02115",
         "telephone": "",
         "website": "",
-        "photo": "",
+        "photo": [
+            "/image/detail/001007/1.jpg",
+            "/image/detail/001007/2.jpg",
+            "/image/detail/001007/3.jpg"
+        ],
         "map": "image/buildingMaps/001.png",
         "openhour": {
             "mon": "11:00 am - 07:00 pm",
@@ -213,7 +237,11 @@
         "address": "346 Huntington Ave, Boston, MA 02115",
         "telephone": "",
         "website": "http://www.uburger.com/",
-        "photo": "",
+        "photo": [
+            "/image/detail/001008/1.jpg",
+            "/image/detail/001008/2.jpg",
+            "/image/detail/001008/3.jpg"
+        ],
         "map": "image/buildingMaps/001.png",
         "openhour": {
             "mon": "11:00 am - 08:00 pm",
@@ -241,7 +269,11 @@
         "address": "376 Huntington Ave, Boston, MA 02115",
         "telephone": "(617) 373-4202",
         "website": "www.argotea.com",
-        "photo": "",
+        "photo": [
+            "/image/detail/002001/1.jpg",
+            "/image/detail/002001/2.jpg",
+            "/image/detail/002001/3.jpg"
+        ],
         "map": "image/buildingMaps/002.png",
         "openhour": {
             "mon": "07:00 am - 08:00 pm",
@@ -268,7 +300,11 @@
         "address": "716 Columbus Ave, Boston, MA 02120",
         "telephone": "",
         "website": "",
-        "photo": "",
+        "photo": [
+            "/image/detail/003001/1.jpg",
+            "/image/detail/003001/2.jpg",
+            "/image/detail/003001/3.jpg"
+        ],
         "map": "image/buildingMaps/003.png",
         "openhour": {
             "mon": "07:00 am - 05:00 pm",
@@ -296,7 +332,11 @@
         "address": "716 Columbus Ave, Boston, MA 02120",
         "telephone": "(617) 373-3535",
         "website": "",
-        "photo": "",
+        "photo": [
+            "/image/detail/003002/1.jpg",
+            "/image/detail/003002/2.jpg",
+            "/image/detail/003002/3.jpg"
+        ],
         "map": "image/buildingMaps/003.png",
         "openhour": {
             "mon": "07:00 am - 05:00 pm",
@@ -322,7 +362,11 @@
         "address": "1175 Tremont St, Boston, MA 02120",
         "telephone": "",
         "website": "http://www.jambajuice.com/",
-        "photo": "",
+        "photo": [
+            "/image/detail/004001/1.jpg",
+            "/image/detail/004001/2.jpg",
+            "/image/detail/004001/3.jpg"
+        ],
         "map": "image/buildingMaps/004.png",
         "openhour": {
             "mon": "07:00 am - 07:00 pm",
@@ -350,7 +394,11 @@
         "address": "1175 Tremont St, Boston, MA 02120",
         "telephone": "(617) 373-3396",
         "website": "http://www.peets.com/",
-        "photo": "",
+        "photo": [
+            "/image/detail/004002/1.jpg",
+            "/image/detail/004002/2.jpg",
+            "/image/detail/004002/3.jpg"
+        ],
         "map": "image/buildingMaps/004.png",
         "openhour": {
             "mon": "07:00 am - 07:00 pm",
@@ -377,7 +425,11 @@
         "address": "360 Huntington Ave, Boston, MA 02115",
         "telephone": "",
         "website": "https://www.dunkindonuts.com/content/dunkindonuts/en/menu.html",
-        "photo": "",
+        "photo": [
+            "/image/detail/005001/1.jpg",
+            "/image/detail/005001/2.jpg",
+            "/image/detail/005001/3.jpg"
+        ],
         "map": "image/buildingMaps/005.png",
         "openhour": {
             "mon": "06:00 am - 08:00 pm",
@@ -404,7 +456,11 @@
         "address": "11 Speare Place, Boston, MA 02115",
         "telephone": "(617) 373-4776",
         "website": "",
-        "photo": "",
+        "photo": [
+            "/image/detail/006001/1.jpg",
+            "/image/detail/006001/2.jpg",
+            "/image/detail/006001/3.jpg"
+        ],
         "map": "image/buildingMaps/006.png",
         "openhour": {
             "mon": "07:00 am - 01:00 am",
@@ -435,7 +491,11 @@
         "address": "11 Speare Place, Boston, MA 02115",
         "telephone": "",
         "website": "",
-        "photo": "",
+        "photo": [
+            "/image/detail/006002/1.jpg",
+            "/image/detail/006002/2.jpg",
+            "/image/detail/006002/3.jpg"
+        ],
         "map": "image/buildingMaps/006.png",
         "openhour": {
             "mon": "11:00 am - 08:00 pm",
@@ -464,7 +524,11 @@
         "address": "122 St. Stephen St., Boston, MA 02115",
         "telephone": "",
         "website": "",
-        "photo": "",
+        "photo": [
+            "/image/detail/007001/1.jpg",
+            "/image/detail/007001/2.jpg",
+            "/image/detail/007001/3.jpg"
+        ],
         "map": "image/buildingMaps/007.png",
         "openhour": {
             "mon": "07:00 am - 11:00 pm",
@@ -496,7 +560,11 @@
         "address": "1175 Tremont St, Boston, MA 02120",
         "telephone": "",
         "website": "",
-        "photo": "",
+        "photo": [
+            "/image/detail/004003/1.jpg",
+            "/image/detail/004003/2.jpg",
+            "/image/detail/004003/3.jpg"
+        ],
         "map": "image/buildingMaps/004.png",
         "openhour": {
             "mon": "07:00 am - 10:00 pm",
@@ -524,7 +592,11 @@
         "address": "1175 Tremont St, Boston, MA 02120",
         "telephone": "",
         "website": "",
-        "photo": "",
+        "photo": [
+            "/image/detail/004004/1.jpg",
+            "/image/detail/004004/2.jpg",
+            "/image/detail/004004/3.jpg"
+        ],
         "map": "image/buildingMaps/004.png",
         "openhour": {
             "mon": "11:00 am - 05:00 pm",
@@ -551,7 +623,11 @@
         "address": "Centennial Common, Boston, MA 02120",
         "telephone": "",
         "website": "",
-        "photo": "",
+        "photo": [
+            "/image/detail/008001/1.jpg",
+            "/image/detail/008001/2.jpg",
+            "/image/detail/008001/3.jpg"
+        ],
         "map": "image/buildingMaps/008.png",
         "openhour": {
             "mon": "10:30 am - 02:30 pm",
@@ -578,7 +654,11 @@
         "address": "380 Huntington Ave, Boston, MA 02115",
         "telephone": "(617) 373-7183",
         "website": "http://www.rebeccascafe.com/neu/",
-        "photo": "http://www.rebeccascafe.com/neu/images/photo-churchhill-lg.jpg",
+        "photo": [
+            "/image/detail/009001/1.jpg",
+            "/image/detail/009001/2.jpg",
+            "/image/detail/009001/3.jpg"
+        ],
         "map": "image/buildingMaps/009.png",
         "openhour": {
             "mon": "07:00 am - 04:00 pm",
@@ -608,7 +688,11 @@
         "address": "11 Leon St, Boston, MA 02115",
         "telephone": "(617) 373-4613",
         "website": "http://www.subway.com/subwayroot/default.aspx",
-        "photo": "",
+        "photo": [
+            "/image/detail/010001/1.jpg",
+            "/image/detail/010001/2.jpg",
+            "/image/detail/010001/3.jpg"
+        ],
         "map": "image/buildingMaps/010.png",
         "openhour": {
             "mon": "07:00 am - 07:00 pm",
@@ -637,7 +721,11 @@
         "address": "115 Forsyth St, Boston, MA 02115",
         "telephone": "(617) 373-8414",
         "website": "https://www.dunkindonuts.com/content/dunkindonuts/en/menu.html",
-        "photo": "",
+        "photo": [
+            "/image/detail/dd/1.jpg",
+            "/image/detail/dd/2.jpg",
+            "/image/detail/dd/3.jpg"
+        ],
         "map": "image/buildingMaps/011.png",
         "openhour": {
             "mon": "06:00 am - 08:00 pm",
@@ -664,7 +752,11 @@
         "address": "1150 Tremont St, Boston, MA 02120",
         "telephone": "(617) 442-7600",
         "website": "https://www.dunkindonuts.com/content/dunkindonuts/en/menu.html",
-        "photo": "",
+        "photo": [
+            "/image/detail/dd/1.jpg",
+            "/image/detail/dd/2.jpg",
+            "/image/detail/dd/3.jpg"
+        ],
         "map": "image/buildingMaps/012.png",
         "openhour": {
             "mon": "05:00 am - 10:00 pm",
