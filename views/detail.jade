@@ -41,9 +41,15 @@ block content
               p Open Now?
             hr
             h3 Popular Tips
-            ul
-              for tip in tips
-                li #{tip.content}, #{tip.date}, #{tip.user.profile.name === '' ? 'A' : tip.user.profile.name}
+            div.popular-tip-scroll
+              ul
+                for tip in tips
+                  li #{tip.content} 
+                     br
+                     |@#{tip.date} 
+                     br
+                     |by #{tip.user.profile.name === '' ? 'Anonymous User' : tip.user.profile.name}
+
       div.col-md-5(id='divForTips')
         h3 My Tips
         p Do you like #{venue.name}?
@@ -64,10 +70,16 @@ block content
         hr
         form.form-horizontal(role='form', method='POST')
           input(type='hidden', name='_csrf', value=_csrf)
-          h3 Leave us your feedback!
-          input.form-control(name='tip', id='tip')
+          h3 Leave your tips!
+          textarea(name='tip', id='tip', rows='10', cols='50', 
+            aria-describedby='TipHelpBlock', wrap='hard',
+            placeholder='Your tips help others to learn more about this venue!' required)
+          span.help-block(id='TipHelpBlock') We appreciate your tips!
           .col-sm-6
+<<<<<<< HEAD
             .checkbox
+=======
+>>>>>>> 8d8eca25c4d02f82e73f4df2b19323d651c022d9
           .col-sm-offset-3.col-sm-4
           button.btn.btn-primary.setwith200(type='submit')
             | Add Tip
