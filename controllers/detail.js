@@ -1,13 +1,6 @@
 var Venue = require('../models/Venue');
 var Tip = require('../models/Tip');
 
-exports.getDetail = function(req, res) {
-	Venue.findOne({name: 'Hotdog'}, function (err, currentVenue){
-		console.log(currentVenue);
-		res.render('detail', {venue: currentVenue});
-	});
-};
-
 exports.updateTip = function(req, res){
 	Tip.find({name: 'Hotdog'}, function (err, tips){
 		var tip = tips[0];

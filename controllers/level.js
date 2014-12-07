@@ -2,17 +2,8 @@ var express = require("express")
 router = express.Router()
 var Venue = require('../models/Venue')
 
-//router
-//  .route
-//  .get('/all-data', function () {
-//    res.render({
-//      "4": [720, 1080]
-//    })
-//  })
-
 exports.levelAllData = function (req, res) {
   res.send({
-    //4: [720, 1080]
       Breakfast: { 
               Coffee: {
                         1: '',

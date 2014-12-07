@@ -14,12 +14,6 @@ Date.prototype.timeNow = function () {
   return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes() +":"+ ((this.getSeconds() < 10)?"0":"") + this.getSeconds();
 }
 
-exports.getVenue = function(req, res) {
-  Venue.findOne({name: 'Hotdog'}, function (err, currentVenue){
-    res.render('venue', {venue: currentVenue});
-  });
-};
-
 exports.show = function(req, res) {
   var venue_id = req.params['venue_id']
   var user_id = req.user._id

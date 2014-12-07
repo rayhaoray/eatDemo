@@ -134,15 +134,13 @@ app.get('/cover', coverController.getCover);
 app.get('/level', levelController.getLevel);
 app.get('/level-all-data', levelController.levelAllData);
 app.post('/venue', venueController.go);
-app.get('/venue', venueController.getVenue);
 app.get('/venue/:venue_id', loginCheck()).get('/venue/:venue_id', venueController.show)
 app.post('/venue/:venue_id', venueController.postTip);
 app.post('/venue/:venue_id/likes', venueController.postLike);
 app.post('/venue/:venue_id/rates', venueController.postRating);
 app.get('/history', historyController.getHistory);
 app.post('/history/delete', historyController.postDeleteTip);
-app.get('/direction', directionController.getDirection);
-app.get('/direction/:venue_id', directionController.getDirection);
+app.get('/direction/:venue_id', loginCheck()).get('/direction/:venue_id', directionController.getDirection);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
