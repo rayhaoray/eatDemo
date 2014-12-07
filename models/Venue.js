@@ -13,6 +13,7 @@ var venueSchema = new mongoose.Schema({
   openhour: Object,
   opennow: String, 
   photo: String,
+  map: String,
   category: Array
 },
 {

@@ -10,6 +10,7 @@
         "telephone": "(617) 373-2000",
         "website": "http://www.kigokitchen.com/northeastern/",
         "photo": "",
+        "map": "image/buildingMaps/001.png",
         "openhour": {
             "mon": "11:00 am - 7:00 pm",
             "tue": "11:00 am - 7:00 pm",
@@ -38,6 +39,7 @@
         "telephone": "(617) 373-7644",
         "website": "",
         "photo": "",
+        "map": "image/buildingMaps/001.png",
         "openhour": {
             "mon": "7:00 am - 10:00 pm",
             "tue": "7:00 am - 10:00 pm",
@@ -68,6 +70,7 @@
         "telephone": "(617) 373-2233",
         "website": "http://popeyes.com/menu",
         "photo": "",
+        "map": "image/buildingMaps/001.png",
         "openhour": {
             "mon": "10:30 am - 09:00 pm",
             "tue": "10:30 am - 09:00 pm",
@@ -96,6 +99,7 @@
         "telephone": "(617) 373-2530",
         "website": "http://www.starbucks.com/menu",
         "photo": "",
+        "map": "image/buildingMaps/001.png",
         "openhour": {
             "mon": "07:00 am - 10:00 pm",
             "tue": "07:00 am - 10:00 pm",
@@ -121,6 +125,7 @@
         "telephone": "(617) 373-5969",
         "website": "",
         "photo": "",
+        "map": "image/buildingMaps/001.png",
         "openhour": {
             "mon": "10:30 am - 08:00 pm",
             "tue": "10:30 am - 08:00 pm",
@@ -145,9 +150,10 @@
         "visit": 0,
         "building": "Curry Student Center",
         "address": "346 Huntington Ave, Boston, MA 02115",
-        "telephone": "",
+        "telephone": "(617) 373-2000",
         "website": "http://www.tacobell.com/",
         "photo": "",
+        "map": "image/buildingMaps/001.png",
         "openhour": {
             "mon": "10:30 am - 08:00 pm",
             "tue": "10:30 am - 08:00 pm",
@@ -175,6 +181,7 @@
         "telephone": "",
         "website": "",
         "photo": "",
+        "map": "image/buildingMaps/001.png",
         "openhour": {
             "mon": "11:00 am - 07:00 pm",
             "tue": "11:00 am - 07:00 pm",
@@ -203,6 +210,7 @@
         "telephone": "",
         "website": "http://www.uburger.com/",
         "photo": "",
+        "map": "image/buildingMaps/001.png",
         "openhour": {
             "mon": "11:00 am - 08:00 pm",
             "tue": "11:00 am - 08:00 pm",
@@ -220,22 +228,6 @@
         ]
     },
     {
-        "id": "001009",
-        "name": "Curry Catering",
-        "like": 0,
-        "score": 0,
-        "visit": 0,
-        "building": "Curry Student Center",
-        "address": "346 Huntington Ave, Boston, MA 02115",
-        "telephone": "(617) 373-2233",
-        "website": "",
-        "photo": "",
-        "openhour": {},
-        "category": [
-            "Caters"
-        ]
-    },
-    {
         "id": "002001",
         "name": "Argo Tea",
         "like": 0,
@@ -246,6 +238,7 @@
         "telephone": "(617) 373-4202",
         "website": "www.argotea.com",
         "photo": "",
+        "map": "image/buildingMaps/002.png",
         "openhour": {
             "mon": "07:00 am - 08:00 pm",
             "tue": "07:00 am - 08:00 pm",
@@ -272,6 +265,7 @@
         "telephone": "",
         "website": "",
         "photo": "",
+        "map": "image/buildingMaps/003.png",
         "openhour": {
             "mon": "07:00 am - 05:00 pm",
             "tue": "07:00 am - 05:00 pm",
@@ -299,6 +293,7 @@
         "telephone": "(617) 373-3535",
         "website": "",
         "photo": "",
+        "map": "image/buildingMaps/003.png",
         "openhour": {
             "mon": "07:00 am - 05:00 pm",
             "tue": "11:30 am - 02:00 pm",
@@ -324,6 +319,7 @@
         "telephone": "",
         "website": "http://www.jambajuice.com/",
         "photo": "",
+        "map": "image/buildingMaps/004.png",
         "openhour": {
             "mon": "07:00 am - 07:00 pm",
             "tue": "07:00 am - 07:00 pm",
@@ -348,9 +344,10 @@
         "visit": 0,
         "building": "International Village",
         "address": "1175 Tremont St, Boston, MA 02120",
-        "telephone": "(617) 373 3396",
+        "telephone": "(617) 373-3396",
         "website": "http://www.peets.com/",
         "photo": "",
+        "map": "image/buildingMaps/004.png",
         "openhour": {
             "mon": "07:00 am - 07:00 pm",
             "tue": "07:00 am - 07:00 pm",
@@ -368,30 +365,29 @@
     },
     {
         "id": "005001",
-        "name": "Subway",
+        "name": "Dunkin’ Donuts",
         "like": 0,
         "score": 0,
         "visit": 0,
-        "building": "Richards Hall",
+        "building": "Hayden Hall",
         "address": "360 Huntington Ave, Boston, MA 02115",
-        "telephone": "(617) 373 4613",
-        "website": "http://www.subway.com/subwayroot/default.aspx",
+        "telephone": "",
+        "website": "https://www.dunkindonuts.com/content/dunkindonuts/en/menu.html",
         "photo": "",
+        "map": "image/buildingMaps/005.png",
         "openhour": {
-            "mon": "07:00 am - 07:00 pm",
-            "tue": "07:00 am - 09:00 pm",
-            "wed": "07:00 am - 09:00 pm",
-            "thu": "07:00 am - 09:00 pm",
-            "fri": "07:00 am - 08:00 pm",
+            "mon": "06:00 am - 08:00 pm",
+            "tue": "06:00 am - 08:00 pm",
+            "wed": "06:00 am - 08:00 pm",
+            "thu": "06:00 am - 08:00 pm",
+            "fri": "06:00 am - 08:00 pm",
             "sat": "Closed",
             "sun": "Closed"
         },
         "category": [
             "Breakfast",
-            "Lunch",
-            "Dinner",
-            "Fastfood",
-            "Sandwich"
+            "Coffee",
+            "Tea"
         ]
     },
     {
@@ -402,9 +398,10 @@
         "visit": 0,
         "building": "Stetson East",
         "address": "11 Speare Place, Boston, MA 02115",
-        "telephone": "(617) 373 4776",
+        "telephone": "(617) 373-4776",
         "website": "",
         "photo": "",
+        "map": "image/buildingMaps/006.png",
         "openhour": {
             "mon": "07:00 am - 01:00 am",
             "tue": "07:00 am - 01:00 am",
@@ -435,6 +432,7 @@
         "telephone": "",
         "website": "",
         "photo": "",
+        "map": "image/buildingMaps/006.png",
         "openhour": {
             "mon": "11:00 am - 08:00 pm",
             "tue": "11:00 am - 08:00 pm",
@@ -463,6 +461,7 @@
         "telephone": "",
         "website": "",
         "photo": "",
+        "map": "image/buildingMaps/007.png",
         "openhour": {
             "mon": "07:00 am - 11:00 pm",
             "tue": "07:00 am - 11:00 pm",
@@ -494,6 +493,7 @@
         "telephone": "",
         "website": "",
         "photo": "",
+        "map": "image/buildingMaps/004.png",
         "openhour": {
             "mon": "07:00 am - 10:00 pm",
             "tue": "07:00 am - 10:00 pm",
@@ -521,6 +521,7 @@
         "telephone": "",
         "website": "",
         "photo": "",
+        "map": "image/buildingMaps/004.png",
         "openhour": {
             "mon": "11:00 am - 05:00 pm",
             "tue": "11:00 am - 05:00 pm",
@@ -547,6 +548,7 @@
         "telephone": "",
         "website": "",
         "photo": "",
+        "map": "image/buildingMaps/008.png",
         "openhour": {
             "mon": "10:30 am - 02:30 pm",
             "tue": "10:30 am - 02:30 pm",
@@ -573,6 +575,7 @@
         "telephone": "(617) 373-7183",
         "website": "http://www.rebeccascafe.com/neu/",
         "photo": "http://www.rebeccascafe.com/neu/images/photo-churchhill-lg.jpg",
+        "map": "image/buildingMaps/009.png",
         "openhour": {
             "mon": "07:00 am - 04:00 pm",
             "tue": "07:00 am - 04:00 pm",
@@ -589,6 +592,89 @@
             "Caterer",
             "Sandwich",
             "Pizza"
+        ]
+    },
+    {
+        "id": "010001",
+        "name": "Subway",
+        "like": 0,
+        "score": 0,
+        "visit": 0,
+        "building": "Ryder Hall",
+        "address": "11 Leon St, Boston, MA 02115",
+        "telephone": "(617) 373-4613",
+        "website": "http://www.subway.com/subwayroot/default.aspx",
+        "photo": "",
+        "map": "image/buildingMaps/010.png",
+        "openhour": {
+            "mon": "07:00 am - 07:00 pm",
+            "tue": "07:00 am - 09:00 pm",
+            "wed": "07:00 am - 09:00 pm",
+            "thu": "07:00 am - 09:00 pm",
+            "fri": "07:00 am - 08:00 pm",
+            "sat": "Closed",
+            "sun": "Closed"
+        },
+        "category": [
+            "Breakfast",
+            "Lunch",
+            "Dinner",
+            "Fastfood",
+            "Sandwich"
+        ]
+    },
+    {
+        "id": "011001",
+        "name": "Dunkin’ Donuts",
+        "like": 0,
+        "score": 0,
+        "visit": 0,
+        "building": "Shillman Hall",
+        "address": "115 Forsyth St, Boston, MA 02115",
+        "telephone": "(617) 373-8414",
+        "website": "https://www.dunkindonuts.com/content/dunkindonuts/en/menu.html",
+        "photo": "",
+        "map": "image/buildingMaps/011.png",
+        "openhour": {
+            "mon": "06:00 am - 08:00 pm",
+            "tue": "06:00 am - 08:00 pm",
+            "wed": "06:00 am - 08:00 pm",
+            "thu": "06:00 am - 08:00 pm",
+            "fri": "06:00 am - 08:00 pm",
+            "sat": "Closed",
+            "sun": "Closed"
+        },
+        "category": [
+            "Breakfast",
+            "Coffee",
+            "Tea"
+        ]
+    },
+    {
+        "id": "012001",
+        "name": "Dunkin’ Donuts",
+        "like": 0,
+        "score": 0,
+        "visit": 0,
+        "building": "Ruggles Station",
+        "address": "1150 Tremont St, Boston, MA 02120",
+        "telephone": "(617) 442-7600",
+        "website": "https://www.dunkindonuts.com/content/dunkindonuts/en/menu.html",
+        "photo": "",
+        "map": "image/buildingMaps/012.png",
+        "openhour": {
+            "mon": "05:00 am - 10:00 pm",
+            "tue": "05:00 am - 10:00 pm",
+            "wed": "05:00 am - 10:00 pm",
+            "thu": "05:00 am - 10:00 pm",
+            "fri": "05:00 am - 10:00 pm",
+            "sat": "07:00 am - 08:00 pm",
+            "sun": "07:00 am - 08:00 pm"
+        },
+        "category": [
+            "Breakfast",
+            "Coffee",
+            "Tea"
         ]
     }
 ]
