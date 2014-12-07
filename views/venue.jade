@@ -5,46 +5,44 @@ link(href='css/style.css', rel='stylesheet')
 
 block content
     -if(typeof(venue[0]) !== 'undefined'){
-    .row.clearfix
-        .col-md-6.column
-          h2="Top Venue"
-          .row.clearfix
-            .col-md-12.column
-              a.h3(href='/venue/#{venue[0]._id}')=venue[0].name 
-          #mapholder.map-frame
-          .row.clearfix
+    .row
+        div.col-md-12.divForVenueName
+          a.h1.logofont(href='/venue/#{venue[0]._id}')=venue[0].name 
+        .row
+        div.col-md-8.column
+          img(src="#{venue[0].photo}")
+          .row
             .col-md-12.column
               .row
-                .col-sm-6
+                hr
+                .col-md-12
                   p Likes: #{venue[0].like} 
                   p Score: #{venue[0].score}
-                  p Address: #{venue[0].address}
+                .col-sm-6
+                  p Building: #{venue[0].building}
                   p Phone: #{venue[0].telephone}
-                  a.btn.btn-lg.btn-default(href='/direction/#{venue[0]._id}') GO!
+                  a.btn.btn-lg.btn-primary.setwith200(href='/direction/#{venue[0]._id}') Get direction!
 
         if (venue.length > 1)
-          .col-md-6.column
-            .row.clearfix
-              h2="Venues you may also like"
-              .col-md-12.column
-                a.h3(href='/venue/#{venue[1]._id}')=venue[1].name
-                .row
-                  .col-sm-6
-                    p Likes: #{venue[1].like} 
-                    p Score: #{venue[1].score}
-                    p Address: #{venue[1].address}
-                    p Phone: #{venue[1].telephone}
-                    a.btn.btn-lg.btn-default(href='/direction/#{venue[1]._id}') GO!
-            .row.clearfix
-              .col-md-12.column
-                a.h3(href='/venue/#{venue[2]._id}')=venue[2].name
-                .row
-                  .col-sm-6
-                    p Likes: #{venue[2].like} 
-                    p Score: #{venue[2].score}
-                    p Address: #{venue[2].address}
-                    p Phone: #{venue[2].telephone}
-                    a.btn.btn-lg.btn-default(href='/direction/#{venue[2]._id}') GO!
+          .col-md-4.column.container
+            .row
+              h4.divForAlsoLike="You might also like:"
+              .col-md-12.column.divForSmallVenue
+                a.h3.logofont(href='/venue/#{venue[1]._id}')=venue[1].name
+                hr
+                p Likes: #{venue[1].like} 
+                p Score: #{venue[1].score}
+                p Building: #{venue[1].building}
+                p Phone: #{venue[1].telephone}
+                a.btn.btn-lg.btn-dark.setwith200(href='/direction/#{venue[1]._id}') Get direction
+              .col-md-12.column.divForSmallVenue
+                a.h3.logofont(href='/venue/#{venue[2]._id}')=venue[2].name
+                hr
+                p Likes: #{venue[2].like}
+                p Score: #{venue[2].score}
+                p Building: #{venue[2].building}
+                p Phone: #{venue[2].telephone}
+                a.btn.btn-lg.btn-dark.setwith200(href='/direction/#{venue[2]._id}') Get direction
     -}
     -else{
       h2 Oops!

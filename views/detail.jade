@@ -7,13 +7,9 @@ block title
 block content
   div(id='venue-id', display='none', data='#{venue._id}')
   div(id='csrf', display='none', data='#{_csrf}')
-    .row.clearfix
-        .col-md-6.column.fill-left
-          .row.clearfix
-            .col-md-12.column
-            h2=venue.name 
-            h3 Photos 
-
+    div.row(id='firstRow')
+      h2=venue.name
+      div.col-md-12
             #header-carousel.carousel.slide
               ol.carousel-indicators
                 li.active(data-target="#header-carousel", data-slide-to="0")
@@ -21,80 +17,106 @@ block content
                 li(data-target="#header-carousel", data-slide-to="2")
               .carousel-inner
                 .item.active
-                  img(src="#{venue.photo}", alt="0")
+                  img.fitdivimg(src="#{venue.photo}", alt="0")
                   .carousel-caption
                 .item
-                  img(src="#{venue.photo}", alt="1")
+                  img.fitdivimg(src="#{venue.photo}", alt="1")
                   .carousel-caption
                 .item       
-                  img(src="#{venue.photo}", alt="2")
+                  img.fitdivimg(src="#{venue.photo}", alt="2")
                   .carousel-caption
               a.left.carousel-control(href="#header-carousel", data-slide="prev")
                 span.icon-prev
               a.right.carousel-control(href="#header-carousel", data-slide="next")
                 span.icon-next
-
-            .col-md-12.column
+    div.row(id='secondRow')
+      div.col-md-4(id='divForDetails')
             h3 Details
-            .row
-                .col-sm-6
-                  p Likes: #{venue.like} 
-                  p Score: #{venue.score}
-                  p Address: #{venue.address}
-                  p Building: #{venue.building}
-                  p Phone: #{venue.telephone}
-                  p OpenHour: Now #{venue.openhour.mon} 
-                  ul 
-                    li Monday: #{venue.openhour.mon}
-                    li Tuesday: #{venue.openhour.tue}
-                    li Wednesday: #{venue.openhour.wed}
-                    li Thursday: #{venue.openhour.thu}
-                    li Friday: #{venue.openhour.fri}
-                    li Saturday: #{venue.openhour.sat}
-                    li Sunday: #{venue.openhour.sun}
-        
-        .col-md-6.column.fill-right
-          .row.clearfix
-            .col-md-12.column
+              p Likes: #{venue.like} 
+              p Score: #{venue.score}
+              p Address: #{venue.address}
+              p Building: #{venue.building}
+              p Phone: #{venue.telephone}
+              p Open Now?
+            hr
             h3 Popular Tips
             ul
               for tip in tips
                 li #{tip.content}, #{tip.date}, #{tip.user.profile.name === '' ? 'A' : tip.user.profile.name}
 
-                
-            .col-md-12.column
-            h3 My Tips
-            h4 No tip yet? Add one now! 
+            //-<<<<<<< HEAD
+            //-                
+            //-            .col-md-12.column
+            //-            h3 My Tips
+            //-            h4 No tip yet? Add one now! 
+            //-
+            //-            hr
+            //-            .form-group
+            //-            | Rate it:
+            //-            //- NOTE: data-average is use for last time's rating, not for average rating.
+            //-            #rating-area
+            //-              #rating(data-average="3" data-id="1")
+            //-            
+            //-            hr
+            //-            .form-group
+            //-              label.col-sm-3.control-label(for='like')  
+            //-                span#like-count #{likes}
+            //-                | &nbsp;Like
+            //-            -if(like)
+            //-              input.form-control(type='checkbox', name='like', id='like', checked)
+            //-            -else
+            //-              input.form-control(type='checkbox', name='like', id='like')
+            //-            form.form-horizontal(role='form', method='POST')
+            //-              input(type='hidden', name='_csrf', value=_csrf)
+            //-              .form-group
+            //-                label.col-sm-3.control-label(for='tip') New Tip
+            //-                .col-sm-6
+            //-                  input.form-control(name='tip', id='tip')
+            //-                .col-sm-6
+            //-                  .checkbox
+            //-=======
+      div.col-md-5(id='divForTips')
+        h3 My Tips
+        p Do you like #{venue.name}?
+        img#likeImg(src='')
+        .form-group
+        | Rate it:
+        //- NOTE: data-average is use for last time's rating, not for average rating.
+        #rating-area
+          #rating(data-average="3" data-id="1")
+        .form-group
+          -if(like)
+            input.likeSign(type='checkbox', name='like', id='like', value='1', checked)
+          -else
+            input.likeSign(type='checkbox', name='like', id='like', value='0')
+          label.control-label(for='like', display='none')  
+            span#like-count #{likes}
+            | &nbsp;Like
+        hr
+        form.form-horizontal(role='form', method='POST')
+          input(type='hidden', name='_csrf', value=_csrf)
+          h3 Leave us your feedback!
+          input.form-control(name='tip', id='tip')
+          .col-sm-6
+            .checkbox
+          .col-sm-offset-3.col-sm-4
+          button.btn.btn-primary.setwith200(type='submit')
+            | Add Tip
 
-            hr
-            .form-group
-            | Rate it:
-            //- NOTE: data-average is use for last time's rating, not for average rating.
-            #rating-area
-              #rating(data-average="3" data-id="1")
-            
-            hr
-            .form-group
-              label.col-sm-3.control-label(for='like')  
-                span#like-count #{likes}
-                | &nbsp;Like
-            -if(like)
-              input.form-control(type='checkbox', name='like', id='like', checked)
-            -else
-              input.form-control(type='checkbox', name='like', id='like')
-            form.form-horizontal(role='form', method='POST')
-              input(type='hidden', name='_csrf', value=_csrf)
-              .form-group
-                label.col-sm-3.control-label(for='tip') New Tip
-                .col-sm-6
-                  input.form-control(name='tip', id='tip')
-                .col-sm-6
-                  .checkbox
-                    //- input.form-control(type='checkbox', name='like', id='like', #{like})
-              .form-group
-                .col-sm-offset-3.col-sm-4
-                  button.btn.btn.btn-primary(type='submit')
-                      | Add Tip 
+
+
+      div.col-md-3(id='divForOpenhour')
+        h3 Open Hour
+        ul 
+          li Mon: #{venue.openhour.mon}
+          li Tue: #{venue.openhour.tue}
+          li Wed: #{venue.openhour.wed}
+          li Thu: #{venue.openhour.thu}
+          li Fri: #{venue.openhour.fri}
+          li Sat: #{venue.openhour.sat}
+          li Sun: #{venue.openhour.sun}
+          
+          
 
 block script
   script(type='text/javascript', src='/js/lib/jquery-2.1.1.min.js')

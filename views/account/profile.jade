@@ -31,19 +31,19 @@ block content
       label.col-sm-2.control-label(for='website') Website
       .col-sm-4
         input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
-    .form-group
-      label.col-sm-2.control-label(for='gravatar') Gravatar
-      .col-sm-4
-        img(src="#{user.gravatar()}", class='profile', width='100', height='100')
+    //- .form-group
+    //-   label.col-sm-2.control-label(for='gravatar') Gravatar
+    //-   .col-sm-4
+    //-     img(src="#{user.gravatar()}", class='profile', width='100', height='100')
     .form-group
       .col-sm-offset-2.col-sm-4
-        button.btn.btn.btn-primary(type='submit')
+        button.btn.btn.btn-dark.setwith360(type='submit')
           span.ion-edit
           | Update Profile
 
   .page-header
     h3 History 
-    a.button.btn.btn-default.btn-bottom(href='/history') View My History 
+    a.button.btn.btn-primary.setwith200(href='/history') View My History 
 
     h3 Change Password
 
@@ -59,7 +59,7 @@ block content
         input.form-control(type='password', name='confirmPassword', id='confirmPassword')
     .form-group
       .col-sm-offset-3.col-sm-4
-        button.btn.btn.btn-primary(type='submit')
+        button.btn.btn.btn-dark.setwith360(type='submit')
           span.ion-locked
           | Change Password
 
@@ -71,7 +71,7 @@ block content
   p You can delete your account, but keep in mind this action is irreversible.
   form(action='/account/delete', method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
-    button.btn.btn-danger(type='submit')
+    button.btn.btn-danger.setwith200(type='submit')
       span.ion-trash-b
       | Delete my account
 
@@ -81,29 +81,29 @@ block content
   if user.instagram
     p: a.text-danger(href='/account/unlink/instagram') Unlink your Instagram account
   else
-    p: a(href='/auth/instagram') Link your Instagram account
+    p: a.btn-linkdark(href='/auth/instagram') Link your Instagram account
 
   if user.google
     p: a.text-danger(href='/account/unlink/google') Unlink your Google account
   else
-    p: a(href='/auth/google') Link your Google account
+    p: a.btn-linkdark(href='/auth/google') Link your Google account
 
   if user.facebook
     p: a.text-danger(href='/account/unlink/facebook') Unlink your Facebook account
   else
-    p: a(href='/auth/facebook') Link your Facebook account
+    p: a.btn-linkdark(href='/auth/facebook') Link your Facebook account
 
   if user.twitter
     p: a.text-danger(href='/account/unlink/twitter') Unlink your Twitter account
   else
-    p: a(href='/auth/twitter') Link your Twitter account
+    p: a.btn-linkdark(href='/auth/twitter') Link your Twitter account
 
   if user.github
     p: a.text-danger(href='/account/unlink/github') Unlink your GitHub account
   else
-    p: a(href='/auth/github') Link your GitHub account
+    p: a.btn-linkdark(href='/auth/github') Link your GitHub account
 
   if user.linkedin
     p: a.text-danger(href='/account/unlink/linkedin') Unlink your LinkedIn account
   else
-    p: a(href='/auth/linkedin') Link your LinkedIn account
+    p: a.btn-linkdark(href='/auth/linkedin') Link your LinkedIn account

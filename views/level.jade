@@ -6,7 +6,7 @@ block title
 
 block content
     .row.clearfix
-        .col-md-6.column.fill-left
+        .col-md-6.column.fillvh-left
           h3
             | I know what to eat.
           div.btn-group.fill-width
@@ -14,12 +14,12 @@ block content
           select#venues-selection.fill-width(data-bind='value: leftVenue')
             each venue in venues
               option(value=venue._id) #{venue.name}
-          a.button.btn.btn-default.btn-bottom(data-bind='click: leftGo') Go! 
+          a.button.btn.btn-primary.btn-bottom(data-bind='click: leftGo') Go! 
           form#left-form(action='/venue', method='POST', display: none)
             input(type='hidden', name='_csrf', value=_csrf)
             input(type='hidden', name='venueId', data-bind='value: leftVenue')
         
-        .col-md-6.column.fill-right
+        .col-md-6.column.fillvh-right
           h3
             | Show me what do you have.
           br
@@ -52,7 +52,7 @@ block content
             span(data-bind='text: details')
           br
           br 
-          a.button.btn.btn-default.btn-bottom(data-bind='click: rightGo') Go! 
+          a.button.btn.btn-primary.btn-bottom(data-bind='click: rightGo') Go! 
 
           form#right-form(action='/venue', method='POST', display: none)
             input(type='hidden', name='_csrf', value=_csrf)

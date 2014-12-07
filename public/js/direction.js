@@ -20,7 +20,6 @@ function initialize(position) {
     var lat = position.coords.latitude;
     var lng = position.coords.longitude;
     currentCoor = new google.maps.LatLng(lat, lng);
-    coorend = new google.maps.LatLng(42.349414, -71.048827);
 
     directionsDisplay = new google.maps.DirectionsRenderer();
     var mapOptions = {
