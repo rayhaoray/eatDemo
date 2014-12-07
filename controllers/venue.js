@@ -112,7 +112,7 @@ exports.postTip = function(req, res){
   var newTip = new Tip({
     venue: venue_id,
     user: user_id,
-    date : new Date().today() + '     ' + new Date().timeNow(),
+    date : new Date().today() + ' ' + new Date().timeNow(),
     content : req.body.tip
   });
 

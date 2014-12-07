@@ -44,9 +44,9 @@ block content
                 for tip in tips
                   li #{tip.content} 
                      br
-                     |'@'#{tip.date} 
+                     |@#{tip.date} 
                      br
-                     |'by '#{tip.user.profile.name === '' ? 'Anonymous User' : tip.user.profile.name}
+                     |by #{tip.user.profile.name === '' ? 'Anonymous User' : tip.user.profile.name}
 
       div.col-md-5(id='divForTips')
         h3 My Tips
