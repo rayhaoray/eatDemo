@@ -1,10 +1,19 @@
-.fill-left { 
+.fillvh-left { 
     height: 80vh;
     background-color: #eeeeee;
 }
 
-.fill-right { 
+.fillvh-right { 
     height: 80vh;
+    background-color: #cccccc;
+}
+.fillfix-left { 
+    height: 600px;
+    background-color: #eeeeee;
+}
+
+.fillfix-right { 
+    height: 600px;
     background-color: #cccccc;
 }
 
@@ -49,4 +58,28 @@
 .eatlogo{
     height: 21px;
     width: 50px;
+}
+
+.item{
+    height:200px;
+}
+
+.fitdivimg{
+    width:100%;
+}
+.likeSign{
+    width:50px;
+    height:50px;
+}
+.divForVenueName{
+    height:60px;
+    padding-top: 10px;
+}
+.divForSmallVenue{
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.divForAlsoLike{
+    padding-left: 20px;
 }
