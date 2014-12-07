@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var ObjectId = mongoose.Schema.Types.ObjectId
 
-var userLikedVenueSchema = new mongoose.Schema({
+var userRatedVenueSchema = new mongoose.Schema({
   user: {
     type: ObjectId,
     ref: 'User'
@@ -10,9 +10,9 @@ var userLikedVenueSchema = new mongoose.Schema({
     type: ObjectId,
     ref: 'Venue'
   },
-  like: Boolean,
+  rate: Number
 }, {
-  collection: 'userlikedvenues'
+  collection: 'userratedvenues'
 })
 
-module.exports = mongoose.model('UserLikedVenue', userLikedVenueSchema)
+module.exports = mongoose.model('UserRatedVenue', userRatedVenueSchema)

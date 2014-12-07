@@ -33,7 +33,8 @@ block content
       div.col-md-4(id='divForDetails')
             h3 Details
               p Likes: #{venue.like} 
-              p Score: #{venue.score}
+              p
+                span#score Score: #{average}
               p Address: #{venue.address}
               p Building: #{venue.building}
               p Phone: #{venue.telephone}
@@ -43,38 +44,6 @@ block content
             ul
               for tip in tips
                 li #{tip.content}, #{tip.date}, #{tip.user.profile.name === '' ? 'A' : tip.user.profile.name}
-
-            //-<<<<<<< HEAD
-            //-                
-            //-            .col-md-12.column
-            //-            h3 My Tips
-            //-            h4 No tip yet? Add one now! 
-            //-
-            //-            hr
-            //-            .form-group
-            //-            | Rate it:
-            //-            //- NOTE: data-average is use for last time's rating, not for average rating.
-            //-            #rating-area
-            //-              #rating(data-average="3" data-id="1")
-            //-            
-            //-            hr
-            //-            .form-group
-            //-              label.col-sm-3.control-label(for='like')  
-            //-                span#like-count #{likes}
-            //-                | &nbsp;Like
-            //-            -if(like)
-            //-              input.form-control(type='checkbox', name='like', id='like', checked)
-            //-            -else
-            //-              input.form-control(type='checkbox', name='like', id='like')
-            //-            form.form-horizontal(role='form', method='POST')
-            //-              input(type='hidden', name='_csrf', value=_csrf)
-            //-              .form-group
-            //-                label.col-sm-3.control-label(for='tip') New Tip
-            //-                .col-sm-6
-            //-                  input.form-control(name='tip', id='tip')
-            //-                .col-sm-6
-            //-                  .checkbox
-            //-=======
       div.col-md-5(id='divForTips')
         h3 My Tips
         p Do you like #{venue.name}?
@@ -83,7 +52,7 @@ block content
         | Rate it:
         //- NOTE: data-average is use for last time's rating, not for average rating.
         #rating-area
-          #rating(data-average="3" data-id="1")
+          #rating(data-average="#{rate}")
         .form-group
           -if(like)
             input.likeSign(type='checkbox', name='like', id='like', value='1', checked)

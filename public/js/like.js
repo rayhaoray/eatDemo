@@ -50,7 +50,7 @@ function initRating(){
       console.log(element, rate)
       var hashData = {
         venue_id: venue_id,
-        _csrf: _csrf,
+        '_csrf': _csrf,
         rate: rate
       }
       postRating(hashData)
@@ -59,12 +59,15 @@ function initRating(){
 }
 
 function postRating(dataHash) {
+  console.log(dataHash)
   $.ajax({
     url: '/venue/' + venue_id + '/rates',
     type: 'POST',
     data: dataHash,
     success: function(data) {
-      console.log(data)
+      $('#rating-area').html(data.element)
+      $('#score').html(data.average)
+      initRating()
     }
   })
 }
