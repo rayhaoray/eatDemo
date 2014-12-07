@@ -9,7 +9,11 @@
         "address": "346 Huntington Ave, Boston, MA 02115",
         "telephone": "(617) 373-2000",
         "website": "http://www.kigokitchen.com/northeastern/",
-        "photo": "",
+        "photo": [
+            "/image/buildingMaps/001.png",
+            "/image/buildingMaps/002.png",
+            "/image/buildingMaps/003.png"
+        ],
         "map": "image/buildingMaps/001.png",
         "openhour": {
             "mon": "11:00 am - 7:00 pm",

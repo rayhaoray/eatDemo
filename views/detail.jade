@@ -1,7 +1,6 @@
 extends layout
 block title
     title Detail
-    link(href='/css/style.css', rel='stylesheet')
     link(href='/css/jRating.jquery.css', rel='stylesheet')
 
 block content
@@ -11,19 +10,15 @@ block content
       h2=venue.name
       div.col-md-12
             #header-carousel.carousel.slide
-              ol.carousel-indicators
-                li.active(data-target="#header-carousel", data-slide-to="0")
-                li(data-target="#header-carousel", data-slide-to="1")
-                li(data-target="#header-carousel", data-slide-to="2")
               .carousel-inner
                 .item.active
-                  img.fitdivimg(src="#{venue.photo}", alt="0")
+                  img.fitdivimg(src="#{venue.photo[0]}")
                   .carousel-caption
                 .item
-                  img.fitdivimg(src="#{venue.photo}", alt="1")
+                  img.fitdivimg(src="#{venue.photo[1]}")
                   .carousel-caption
                 .item       
-                  img.fitdivimg(src="#{venue.photo}", alt="2")
+                  img.fitdivimg(src="#{venue.photo[2]}")
                   .carousel-caption
               a.left.carousel-control(href="#header-carousel", data-slide="prev")
                 span.icon-prev
@@ -39,6 +34,8 @@ block content
           li Address: #{venue.address}
           li Building: #{venue.building}
           li Phone: #{venue.telephone}
+          li Website: 
+            a(href='http://#{venue.website}') #{venue.website} 
         hr    
         h3 Open Hour
         ul 
