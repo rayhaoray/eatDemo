@@ -35,7 +35,7 @@ $(function(){
 function initRating(){
   $("#rating").jRating({
     smallStarsPath: '/image/icons/small.png',
-    bigStarsPath: '/image/icons/stars.png',
+    bigStarsPath: '/image/icons/icon.png',
     showRateInfo: false,
     step:true,
     //isDisabled: true,
