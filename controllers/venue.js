@@ -1,6 +1,7 @@
 var Venue = require('../models/Venue');
 var Tip = require('../models/Tip');
 var UserLikedVenue = require('../models/UserLikedVenue')
+var UserRatedVenue = require('../models/UserRatedVenue')
 
 
 // For todays date;
@@ -15,7 +16,6 @@ Date.prototype.timeNow = function () {
 
 exports.getVenue = function(req, res) {
   Venue.findOne({name: 'Hotdog'}, function (err, currentVenue){
-    console.log(currentVenue);
     res.render('venue', {venue: currentVenue});
   });
 };
@@ -27,19 +27,51 @@ exports.show = function(req, res) {
     Tip.find({venue: venue._id}).populate('user').exec(function(err, tips) {
       UserLikedVenue.find({user: user_id, venue: venue_id}, function(err, userLikedVenue) {
         UserLikedVenue.find({venue: venue_id, like: true}, function(err, likes) {
-          var like = null;
-          console.log(userLikedVenue)
-          if (userLikedVenue.length > 0) {
-            like = userLikedVenue[0].like
-          } else {
-            like = false
-          }
-          res.render('detail', {
-            venue: venue,
-            tips: tips,
-            //userLikedVenue: userLikedVenue
-            like: like,
-            likes: likes.length
+          UserRatedVenue.find({venue: venue_id}, function(err, rates){
+            UserRatedVenue.find({venue: venue_id, user: user_id}, function(err, rate) {
+              var rateScore = null
+
+              if (rate.length == 0) {
+                rateScore = '0'
+              } else {
+                rateScore = rate[0].rate
+              }
+
+              var average = null
+              var sum = null
+              if (rates.length !== 0) {
+                sum = rates.map(function(rate){
+                  return rate.rate
+                }).reduce(function(previousValue, currentValue, index, array) {
+                  return previousValue + currentValue;
+                })
+              } else {
+                sum = 0
+              }
+              var len = rates.length
+              if (len == 0) {
+                average = 'N/A'
+              } else {
+                average = sum/len
+              } 
+
+              var like = null;
+              if (userLikedVenue.length > 0) {
+                like = userLikedVenue[0].like
+              } else {
+                like = false
+              }
+              res.render('detail', {
+                venue: venue,
+                tips: tips,
+                like: like,
+                likes: likes.length,
+                rate: rateScore,
+                average: average
+              })
+
+            })
+
           })
         })
       })
@@ -56,7 +88,7 @@ exports.go = function (req, res) {
         Venue.find({category: {"$in" : [venue.category[0]]}}).sort('-like').exec(function (err, currentVenues){
           var i;
           for(i=0; i<3; i++){
-          if(currentVenues[i].id != allVenues[0].id){
+            if(currentVenues[i].id != allVenues[0].id){
               allVenues.push(currentVenues[i]);
             }
           }
@@ -77,19 +109,18 @@ exports.go = function (req, res) {
     switch(req.body.select3) {
       case 'Sort by Name':
         Venue.find({category: { "$in" : [select1]} } && { category: { "$in" : [select2]} }).sort('name').exec(function (err, currentVenues){
-          res.render('venue', {venue: currentVenues});
-        });
-        break;
+        res.render('venue', {venue: currentVenues});
+      });
+      break;
       case 'Sort by Score':
         Venue.find({category: { "$in" : [select1]} } && { category: { "$in" : [select2]} }).sort('-score').exec(function (err, currentVenues){
-          res.render('venue', {venue: currentVenues});
-        });
-        break;
+        res.render('venue', {venue: currentVenues});
+      });
+      break;
       default:
         Venue.find({category: { "$in" : [select1]} } && { category: { "$in" : [select2]} }).sort('-like').exec(function (err, currentVenues){
-          console.log(currentVenues)
-          res.render('venue', {venue: currentVenues});
-        }); 
+        res.render('venue', {venue: currentVenues});
+      }); 
     }
   }
 }
@@ -97,17 +128,6 @@ exports.go = function (req, res) {
 exports.postTip = function(req, res){
   var venue_id = req.params['venue_id']
   var user_id = req.user._id
-  //if(req.body.email === 'undefined') {
-  //  currentEmail = "Anonymous";
-  //} else {
-  //  currentEmail = req.body.email;	
-  //}
-  console.log(req.body)
-  //var userLikedVenue = new UserLikedVenue({
-  //  user: user_id,
-  //  venue: venue_id,
-  //  like: req.body.like == 'on'
-  //})
 
   var newTip = new Tip({
     venue: venue_id,
@@ -129,10 +149,8 @@ exports.postLike = function(req, res) {
   var venue_id = req.params['venue_id']
   var user_id = req.user._id
 
-  console.log('like?', req.body.like)
 
   UserLikedVenue.find({user: user_id, venue: venue_id}, function(err, userLikedVenue) {
-    console.log(userLikedVenue)
     if (userLikedVenue.length !== 0) {
       userLikedVenue = userLikedVenue[0]
       userLikedVenue.like = req.body.like
@@ -145,10 +163,57 @@ exports.postLike = function(req, res) {
     }
     userLikedVenue.save(function (err, userLikedVenue) {
       UserLikedVenue.find({venue: venue_id, like: true}, function(err, likes) {
-        console.log('likes', likes)
         res.send({
           likes: likes.length
         })
+      })
+    })
+  })
+}
+
+exports.postRating = function(req, res) {
+  var venue_id = req.params['venue_id']
+  var user_id = req.user._id
+  UserRatedVenue.find({user: user_id, venue: venue_id}, function(err, userRatedVenue) {
+    if (userRatedVenue.length !== 0) {
+      userRatedVenue = userRatedVenue[0]
+      //userLikedVenue.like = req.body.like
+      userRatedVenue.rate = req.body.rate
+    } else {
+      userRatedVenue = new UserRatedVenue({
+        user: user_id,
+        venue: venue_id,
+        rate: req.body.rate
+      })
+    }
+    userRatedVenue.save(function (err, userRatedVenue) {
+      UserRatedVenue.find({venue: venue_id}, function (err, rates) {
+        var average = null
+
+        var sum = null
+        if (rates.length !== 0) {
+          sum = rates.map(function(rate){
+            return rate.rate
+          }).reduce(function(previousValue, currentValue, index, array) {
+            return previousValue + currentValue;
+          })
+        } else {
+          sum = 0
+        }
+
+        var len = rates.length
+        if (len == 0) {
+          average = 'N/A'
+        } else {
+          average = sum/len
+        } 
+
+        res.send({
+          rate: req.body.rate,
+          average: average,
+          element: '<div id="rating" data-average="' + req.body.rate + '">'
+        })
+
       })
     })
   })

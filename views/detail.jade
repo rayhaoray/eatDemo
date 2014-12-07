@@ -2,6 +2,7 @@ extends layout
 block title
     title Detail
     link(href='/css/style.css', rel='stylesheet')
+    link(href='/css/jRating.jquery.css', rel='stylesheet')
 
 block content
   div(id='venue-id', display='none', data='#{venue._id}')
@@ -31,8 +32,9 @@ block content
     div.row(id='secondRow')
       div.col-md-4(id='divForDetails')
             h3 Details
-              p Likes: #{venue.like} 
-              p Score: #{venue.score}
+              p Likes: #{likes} 
+              p
+                span#score Score: #{average}
               p Address: #{venue.address}
               p Building: #{venue.building}
               p Phone: #{venue.telephone}
@@ -53,6 +55,11 @@ block content
         p Do you like #{venue.name}?
         img#likeImg(src='')
         .form-group
+        | Rate it:
+        //- NOTE: data-average is use for last time's rating, not for average rating.
+        #rating-area
+          #rating(data-average="#{rate}")
+        .form-group
           -if(like)
             input.likeSign(type='checkbox', name='like', id='like', value='1', checked)
           -else
@@ -69,6 +76,7 @@ block content
             placeholder='Your tips help others to learn more about this venue!' required)
           span.help-block(id='TipHelpBlock') We appreciate your tips!
           .col-sm-6
+            .checkbox
           .col-sm-offset-3.col-sm-4
           button.btn.btn-primary.setwith200(type='submit')
             | Add Tip
@@ -89,4 +97,6 @@ block content
           
 
 block script
+  script(type='text/javascript', src='/js/lib/jquery-2.1.1.min.js')
+  script(type='text/javascript', src='/js/jRating.jquery.min.js')
   script(type='text/javascript', src='/js/like.js')
