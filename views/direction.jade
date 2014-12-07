@@ -10,15 +10,11 @@ block content
     .row.clearfix
         .col-md-6.column.fill-left
           #panel.panel
-            b Start: 
-            select#start(onchange='calcRoute();')
-              option(value='current') CurrentLocation
-            b End: 
-            select#end(onchange='calcRoute();')
-              option(value='neu') NEU
-              option(value='bostonCommon') Boston Common
+            b Your Destination: 
+            #end(onchange='calcRoute();')
+              option(value='#{address}') #{venue_name} 
           #map-canvas.map-canvas
         
         .col-md-6.column.fill-right
           #directions-panel.fill
-          a.btn.btn-lg.btn-default.btn-bottom(href='/venue/#{venue_id}') Arrived!
+          a.btn.btn-lg.btn-default.btn-bottom(href='/venue/#{venue_id}') #{venue_name} Arrived!
