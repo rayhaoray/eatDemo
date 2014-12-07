@@ -150,3 +150,13 @@ exports.postLike = function(req, res) {
     })
   })
 }
+
+exports.postRating = function(req, res) {
+  //var venue_id = req.params[]
+  console.log('hehe')
+  console.log(req.user._id)
+  console.log(req.params)
+  res.send({
+    hehe: 12345
+  })
+}

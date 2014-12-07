@@ -2,6 +2,7 @@ extends layout
 block title
     title Detail
     link(href='/css/style.css', rel='stylesheet')
+    link(href='/css/jRating.jquery.css', rel='stylesheet')
 
 block content
   div(id='venue-id', display='none', data='#{venue._id}')
@@ -64,6 +65,13 @@ block content
             .col-md-12.column
             h3 My Tips
             h4 No tip yet? Add one now! 
+
+            hr
+            .form-group
+            | Rate it:
+            //- NOTE: data-average is use for last time's rating, not for average rating.
+            #rating-area
+              #rating(data-average="3" data-id="1")
             
             hr
             .form-group
@@ -89,4 +97,6 @@ block content
                       | Add Tip 
 
 block script
+  script(type='text/javascript', src='/js/lib/jquery-2.1.1.min.js')
+  script(type='text/javascript', src='/js/jRating.jquery.min.js')
   script(type='text/javascript', src='/js/like.js')
