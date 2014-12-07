@@ -67,7 +67,7 @@ exports.levelAllData = function (req, res) {
 }
 
 exports.getLevel = function(req, res) {
-  Venue.find({}, function (err, venues) {
+  Venue.find({}).sort('name').exec(function (err, venues) {
     res.render('level', {
       title: 'Level',
       venues: venues
