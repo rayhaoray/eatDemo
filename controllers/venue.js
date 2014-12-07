@@ -38,11 +38,16 @@ exports.show = function(req, res) {
               }
 
               var average = null
-              var sum = rates.map(function(rate){
-                return rate.rate
-              }).reduce(function(previousValue, currentValue, index, array) {
-                return previousValue + currentValue;
-              })
+              var sum = null
+              if (rates.length !== 0) {
+                sum = rates.map(function(rate){
+                  return rate.rate
+                }).reduce(function(previousValue, currentValue, index, array) {
+                  return previousValue + currentValue;
+                })
+              } else {
+                sum = 0
+              }
               var len = rates.length
               if (len == 0) {
                 average = 'N/A'
@@ -184,11 +189,18 @@ exports.postRating = function(req, res) {
     userRatedVenue.save(function (err, userRatedVenue) {
       UserRatedVenue.find({venue: venue_id}, function (err, rates) {
         var average = null
-        var sum = rates.map(function(rate){
-          return rate.rate
-        }).reduce(function(previousValue, currentValue, index, array) {
-          return previousValue + currentValue;
-        })
+
+        var sum = null
+        if (rates.length !== 0) {
+          sum = rates.map(function(rate){
+            return rate.rate
+          }).reduce(function(previousValue, currentValue, index, array) {
+            return previousValue + currentValue;
+          })
+        } else {
+          sum = 0
+        }
+
         var len = rates.length
         if (len == 0) {
           average = 'N/A'
