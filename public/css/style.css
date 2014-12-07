@@ -15,6 +15,13 @@
     background-color: #fff;
 }
 
+
+.popular-tip-scroll { 
+    height: 30vh;
+    overflow: scroll;
+    background-color: #fff;
+}
+
 .fillfix-left { 
     height: 600px;
     background-color: #eeeeee;
