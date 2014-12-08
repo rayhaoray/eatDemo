@@ -29,7 +29,8 @@
             "Dinner",
             "Asian",
             "Japanese",
-            "Thai"
+            "Thai",
+            "Salad"
         ]
     },
     {
@@ -64,6 +65,7 @@
             "Bagel",
             "Coffee",
             "Tea",
+            "Asian",
             "Convenience Stores"
         ]
     },
@@ -97,7 +99,8 @@
             "Dinner",
             "Fastfood",
             "ChickenWing",
-            "Burger"
+            "Burger",
+            "American"
         ]
     },
     {
@@ -128,7 +131,8 @@
         "category": [
             "Breakfast",
             "Coffee",
-            "Tea"
+            "Tea",
+            "Sandwich"
         ]
     },
     {
@@ -257,7 +261,8 @@
             "Lunch",
             "Dinner",
             "Burger",
-            "Fastfood"
+            "Fastfood",
+            "American"
         ]
     },
     {
@@ -320,6 +325,7 @@
             "Breakfast",
             "Lunch",
             "Coffee",
+            "Tea",
             "Sandwich"
         ]
     },
@@ -350,7 +356,8 @@
         },
         "category": [
             "Lunch",
-            "Buffet"
+            "Buffet",
+            "Salad"
         ]
     },
     {
@@ -479,7 +486,9 @@
             "Fastfood",
             "Sandwich",
             "Burger",
-            "Salad"
+            "Asian",
+            "Salad",
+            "Italian"
         ]
     },
     {
@@ -548,7 +557,7 @@
             "Pizza",
             "Sandwich",
             "Salad",
-            "Pasta"
+            "Italian"
         ]
     },
     {
@@ -580,6 +589,8 @@
             "Breakfast",
             "Lunch",
             "Dinner",
+            "American",
+            "Asian",
             "Buffet"
         ]
     },
@@ -674,9 +685,7 @@
             "Coffee",
             "Breakfast",
             "Lunch",
-            "Caterer",
-            "Sandwich",
-            "Pizza"
+            "Sandwich"
         ]
     },
     {
