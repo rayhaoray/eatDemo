@@ -27,31 +27,55 @@ exports.levelAllData = function (req, res) {
                       }
             },
       Dinner: {
-              Fastfood: {
+              American: {
                         1: ''
-                      },  
-              Burger: {
+                      },
+              Asian: {
                         2: ''
                       },
-              Pizza: {
+              Buffet: {
                         3: ''
                       },
-              Buffet: {
+              Burger: {
                         4: ''
+                      },
+              Fastfood: {
+                        5: ''
+                      },
+              Italian: {
+                        6: ''
+                      },
+              Pizza: {
+                        7: ''
+                      },
+              Salad: {
+                        8: ''
                       }
             },
-      Lunch: { 
-              Fastfood: {
+      Lunch: {
+              American: {
                         1: ''
-                      },  
-              Burger: {
+                      },
+              Asian: {
                         2: ''
                       },
-              Pizza: {
+              Buffet: {
                         3: ''
                       },
-              Buffet: {
+              Burger: {
                         4: ''
+                      },
+              Fastfood: {
+                        5: ''
+                      },
+              Italian: {
+                        6: ''
+                      },
+              Pizza: {
+                        7: ''
+                      },
+              Salad: {
+                        8: ''
                       }
             }
   })
