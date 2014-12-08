@@ -31,7 +31,7 @@ block content
         h3 Details
         ul
           li Likes:
-            span#like-count #{likes}
+            span.like-count #{likes}
           li Score:
             span#score #{average}
           li Address: #{venue.address}
@@ -84,7 +84,7 @@ block content
               input.likeSign(type='checkbox', name='like', id='like', value='0')
               span
           label.control-label(for='like', display='none')  
-            span#like-count #{likes}
+            span.like-count #{likes}
             | &nbsp;Like
         hr
         form.form-horizontal(role='form', method='POST')
