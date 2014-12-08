@@ -29,13 +29,13 @@ exports.levelAllData = function (req, res) {
       Dinner: {
               American: {
                         1: ''
-                      }
+                      },
               Asian: {
                         2: ''
-                      }
+                      },
               Buffet: {
                         3: ''
-                      }
+                      },
               Burger: {
                         4: ''
                       },
@@ -44,7 +44,7 @@ exports.levelAllData = function (req, res) {
                       },
               Italian: {
                         6: ''
-                      }
+                      },
               Pizza: {
                         7: ''
                       },
@@ -55,13 +55,13 @@ exports.levelAllData = function (req, res) {
       Lunch: {
               American: {
                         1: ''
-                      }
+                      },
               Asian: {
                         2: ''
-                      }
+                      },
               Buffet: {
                         3: ''
-                      }
+                      },
               Burger: {
                         4: ''
                       },
@@ -70,7 +70,7 @@ exports.levelAllData = function (req, res) {
                       },
               Italian: {
                         6: ''
-                      }
+                      },
               Pizza: {
                         7: ''
                       },
