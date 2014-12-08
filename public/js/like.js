@@ -15,7 +15,7 @@ $('#like').on('change', function() {
     success: function(data) {
       isUpdating = false
       setView()
-      $("#like-count").html(data.likes)
+      $(".like-count").html(data.likes)
     }
   })
 })

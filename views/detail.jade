@@ -2,6 +2,7 @@ extends layout
 block title
     title Detail
     link(href='/css/jRating.jquery.css', rel='stylesheet')
+    link(href='/css/page/detail.css', rel='stylesheet')
 
 block content
   div(id='venue-id', display='none', data='#{venue._id}')
@@ -29,8 +30,10 @@ block content
       div.col-md-4(id='divForOpenhour')
         h3 Details
         ul
-          li Likes: #{likes} 
-          li Score: #{average}
+          li Likes:
+            span.like-count #{likes}
+          li Score:
+            span#score #{average}
           li Address: #{venue.address}
           li Building: #{venue.building}
           -if(venue.telephone != ''){
@@ -73,12 +76,15 @@ block content
         #rating-area
           #rating(data-average="#{rate}")
         .form-group
-          -if(like)
-            input.likeSign(type='checkbox', name='like', id='like', value='1', checked)
-          -else
-            input.likeSign(type='checkbox', name='like', id='like', value='0')
+          label#like-label
+            -if(like)
+              input.likeSign(type='checkbox', name='like', id='like', value='1', checked)
+              span
+            -else
+              input.likeSign(type='checkbox', name='like', id='like', value='0')
+              span
           label.control-label(for='like', display='none')  
-            span#like-count #{likes}
+            span.like-count #{likes}
             | &nbsp;Like
         hr
         form.form-horizontal(role='form', method='POST')

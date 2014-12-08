@@ -80,7 +80,8 @@
 }
 
 .item{
-    height:200px;
+    width:auto;
+    height:auto;
 }
 
 .fitdivimg{
@@ -125,3 +126,4 @@
     margin-bottom: 50px;
 
 }
+
