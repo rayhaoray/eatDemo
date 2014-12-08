@@ -17,7 +17,8 @@ block content
                   p Score: #{venue[0].score}
                 .col-sm-6
                   p Building: #{venue[0].building}
-                  p Phone: #{venue[0].telephone}
+                  -if(venue[0].telephone != '')
+                    p Phone: #{venue[0].telephone}
                   a.btn.btn-lg.btn-primary.setwith200(href='/direction/#{venue[0]._id}') Get direction »
 
         if (venue.length > 1)
@@ -30,7 +31,8 @@ block content
                 p Likes: #{venue[1].like} 
                 p Score: #{venue[1].score}
                 p Building: #{venue[1].building}
-                p Phone: #{venue[1].telephone}
+                -if(venue[1].telephone != '')
+                  p Phone: #{venue[1].telephone}
                 a.btn.btn-lg.btn-dark.setwith200(href='/direction/#{venue[1]._id}') Get direction
               .col-md-12.column.divForSmallVenue
                 a.h3.logofont(href='/venue/#{venue[2]._id}')=venue[2].name+' »'
@@ -38,6 +40,7 @@ block content
                 p Likes: #{venue[2].like}
                 p Score: #{venue[2].score}
                 p Building: #{venue[2].building}
+                -if(venue[2].telephone != '')
                 p Phone: #{venue[2].telephone}
                 a.btn.btn-lg.btn-dark.setwith200(href='/direction/#{venue[2]._id}') Get direction
     -}

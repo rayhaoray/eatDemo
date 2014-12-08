@@ -33,9 +33,14 @@ block content
           li Score: #{average}
           li Address: #{venue.address}
           li Building: #{venue.building}
-          li Phone: #{venue.telephone}
-          li Website: 
-            a(href='http://#{venue.website}') #{venue.website} 
+          -if(venue.telephone != ''){
+            li Phone: #{venue.telephone}
+          -}
+          -if(venue.website != ''){
+            li Website: 
+              a(href='http://#{venue.website}') #{venue.website} 
+          -}
+
         hr    
         h3 Open Hour
         ul 
@@ -86,10 +91,6 @@ block content
           .col-sm-offset-3.col-sm-4
           button.btn.btn-primary.setwith200(type='submit')
             | Add Tip »
-
-
-
-          
 
 block script
   script(type='text/javascript', src='/js/lib/jquery-2.1.1.min.js')
