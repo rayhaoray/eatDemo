@@ -30,7 +30,8 @@ block content
         h3 Details
         ul
           li Likes: #{likes} 
-          li Score: #{average}
+          li Score:
+            span#score #{average}
           li Address: #{venue.address}
           li Building: #{venue.building}
           -if(venue.telephone != ''){
