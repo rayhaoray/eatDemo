@@ -236,7 +236,19 @@ app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '
  * 500 Error Handler.
  */
 
-app.use(errorHandler());
+// Handle 404
+app.use(function(req, res) {
+  res.status(400);
+  res.render('error/404.jade', {title: '404: File Not Found'});
+});
+  
+// Handle 500
+app.use(function(error, req, res, next) {
+  res.status(500);
+  res.render('error/500.jade', {title:'500: Internal Server Error', error: error});
+});
+
+//app.use(errorHandler());
 
 /**
  * Start Express server.
