@@ -1,0 +1,18 @@
+#like-label input {
+  display: none;
+  }
+
+#like-label span {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url("/image/like/like.png");
+  background-size: contain;
+}
+
+#like-label input:checked + span {
+  width: 20px;
+  height: 20px;
+  background: url("/image/like/like.png");
+  background-size: contain;
+}
