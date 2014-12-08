@@ -8,8 +8,8 @@ block content
   div(id='venue-id', display='none', data='#{venue._id}')
   div(id='csrf', display='none', data='#{_csrf}')
     div.row(id='firstRow')
-      h2=venue.name
       div.col-md-12
+        h2=venue.name
             #header-carousel.carousel.slide
               .carousel-inner
                 .item.active
@@ -26,7 +26,6 @@ block content
               a.right.carousel-control(href="#header-carousel", data-slide="next")
                 span.icon-next
     div.row(id='secondRow')
-
       div.col-md-4(id='divForOpenhour')
         h3 Details
         ul
@@ -55,11 +54,11 @@ block content
           li Sat: #{venue.openhour.sat}
           li Sun: #{venue.openhour.sun}
         h3 Wanna Go?
-        a.btn.btn-lg.btn-primary.setwith360(href='/direction/#{venue._id}') Get direction »
+        a.btn.btn-lg.btn-primary.fill-width(href='/direction/#{venue._id}') Get direction »
       
       div.col-md-4(id='divForDetails')
         h3 Popular Tips
-        div.popular-tip-scroll
+        div.fillvh-right-scroll
           ul
             for tip in tips
               li #{tip.content} 
@@ -70,35 +69,39 @@ block content
 
       div.col-md-4(id='divForTips')
         h3 Do you like #{venue.name}?
-        .form-group
-        | Rate it:
-        //- NOTE: data-average is use for last time's rating, not for average rating.
-        #rating-area
-          #rating(data-average="#{rate}")
-        .form-group
-          label#like-label
-            -if(like)
-              input.likeSign(type='checkbox', name='like', id='like', value='1', checked)
-              span
-            -else
-              input.likeSign(type='checkbox', name='like', id='like', value='0')
-              span
-          label.control-label(for='like', display='none')  
-            span.like-count #{likes}
-            | &nbsp;Like
-        hr
-        form.form-horizontal(role='form', method='POST')
-          input(type='hidden', name='_csrf', value=_csrf)
-          h3 Leave your tips!
-          textarea.setwith360.noneResize(name='tip', id='tip', rows='10', cols='35', 
-            aria-describedby='TipHelpBlock', wrap='hard',
-            placeholder='Your tips help others to learn more about this venue!' required)
-          span.help-block(id='TipHelpBlock') We appreciate your tips!
-          .col-sm-6
-            .checkbox
-          .col-sm-offset-3.col-sm-4
-          button.btn.btn-lg.btn-primary.setwith360.marginBottom(type='submit')
-            | Add Tip »
+        .row
+          .col-md-6
+            .form-group
+            | Rate it:
+            //- NOTE: data-average is use for last time's rating, not for average rating.
+            #rating-area
+              #rating(data-average="#{rate}")
+          .col-md-6
+            .form-group
+              label#like-label
+                -if(like)
+                  input.likeSign(type='checkbox', name='like', id='like', value='1', checked)
+                  span
+                -else
+                  input.likeSign(type='checkbox', name='like', id='like', value='0')
+                  span
+              label.control-label(for='like', display='none')  
+                span.like-count #{likes}
+                | &nbsp;Like
+        h3 Leave your tips!
+        .row
+          form.form-horizontal(role='form', method='POST')
+            input(type='hidden', name='_csrf', value=_csrf)
+            .col-md-12
+              textarea.noneResize.fill-width(name='tip', id='tip', rows='10', 
+                aria-describedby='TipHelpBlock', wrap='hard',
+                placeholder='Your tips help others to learn more about this venue!' required)
+              span.help-block(id='TipHelpBlock') We appreciate your tips!
+              .col-sm-6
+                .checkbox
+              .col-sm-offset-3.col-sm-4
+              button.btn.btn-lg.btn-primary.fill-width.marginBottom(type='submit')
+                | Add Tip »
 
 block script
   script(type='text/javascript', src='/js/lib/jquery-2.1.1.min.js')

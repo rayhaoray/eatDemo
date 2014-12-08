@@ -7,7 +7,7 @@ block content
           a.h1.logofont(href='/venue/#{venue[0]._id}')=venue[0].name+' »'
         .row
         div.col-md-8.column
-          img.container.venueMap(src="#{venue[0].map}")
+          img.venueMap(src="#{venue[0].map}")
           .row
             .col-md-12.column
               .row
@@ -20,7 +20,7 @@ block content
                   -if(venue[0].telephone != '')
                     p Phone: #{venue[0].telephone}
                 .col-md-4
-                  a.btn.btn-lg.btn-primary.setwith200(href='/direction/#{venue[0]._id}') Get direction »
+                  a.btn.btn-lg.btn-primary.fill-width(href='/direction/#{venue[0]._id}') Get direction »
 
         if (venue.length > 1)
           .col-md-4.column.container
@@ -35,7 +35,7 @@ block content
                 p Building: #{venue[1].building}
                 -if(venue[1].telephone != '')
                   p Phone: #{venue[1].telephone}
-                a.btn.btn-lg.btn-dark.setwith200(href='/direction/#{venue[1]._id}') Get direction
+                a.btn.btn-lg.btn-dark.fill-width(href='/direction/#{venue[1]._id}') Get direction
               .col-md-12.column.divForSmallVenue
                 a.h3.logofont(href='/venue/#{venue[2]._id}')=venue[2].name+' »'
                 br
@@ -45,7 +45,7 @@ block content
                 p Building: #{venue[2].building}
                 -if(venue[2].telephone != '')
                 p Phone: #{venue[2].telephone}
-                a.btn.btn-lg.btn-dark.setwith200(href='/direction/#{venue[2]._id}') Get direction
+                a.btn.btn-lg.btn-dark.fill-width(href='/direction/#{venue[2]._id}') Get direction
     -}
     -else{
       h2.marginBottom Please select at least ONE categoty!

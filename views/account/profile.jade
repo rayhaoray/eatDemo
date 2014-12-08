@@ -37,13 +37,15 @@ block content
     //-     img(src="#{user.gravatar()}", class='profile', width='100', height='100')
     .form-group
       .col-sm-offset-2.col-sm-4
-        button.btn.btn.btn-dark.setwith360(type='submit')
+        button.btn.btn.btn-dark.fill-width(type='submit')
           span.ion-edit
           | Update Profile
 
   .page-header
-    h3 History 
-    a.button.btn.btn-primary.setwith200(href='/history') View My History 
+    .row
+      .col-sm-4
+        h3 History 
+        a.button.btn.btn-primary.fill-width(href='/history') View My History 
 
     h3 Change Password
 
@@ -59,7 +61,7 @@ block content
         input.form-control(type='password', name='confirmPassword', id='confirmPassword')
     .form-group
       .col-sm-offset-3.col-sm-4
-        button.btn.btn.btn-dark.setwith360(type='submit')
+        button.btn.btn.btn-dark.fill-width(type='submit')
           span.ion-locked
           | Change Password
 
@@ -71,9 +73,11 @@ block content
   p You can delete your account, but keep in mind this action is irreversible.
   form(action='/account/delete', method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
-    button.btn.btn-danger.setwith200(type='submit')
-      span.ion-trash-b
-      | Delete my account
+    .row
+      .col-sm-4
+        button.btn.btn-danger.fill-width(type='submit')
+          span.ion-trash-b
+          | Delete my account
 
   .page-header
     h3 Linked Accounts

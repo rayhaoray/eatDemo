@@ -1,18 +1,19 @@
 extends layout
 
 block content
-  h3
+  h2 History Of My Tips
     #tips
       for tip in tips
         .page-header
-        h2 #{tip.venue.name} 
+        h3 #{tip.venue.name} 
         p #{tip.content}
-        p #{tip.date}
+        p @#{tip.date}
         form(action='/history/delete', method='POST')
           input(type='hidden', name='_csrf', value=_csrf)
           .form-group
-            .col-sm-4
-              input.form-control(type='hidden', name='tip_id', id='tip_id', value='#{tip._id}')
-              button.btn.btn-danger(type='submit')
-                span.ion-trash-b
-                | Delete
+            .row.marginBottom
+              .col-sm-4
+                input.form-control(type='hidden', name='tip_id', id='tip_id', value='#{tip._id}')
+                button.btn.btn-danger.fill-width(type='submit')
+                  span.ion-trash-b
+                  | Delete
