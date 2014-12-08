@@ -3,16 +3,16 @@
   }
 
 #like-label span {
-  width: 16px;
-  height: 16px;
+  width: 50px;
+  height: 50px;
   display: block;
   background: url("/image/like/like.png");
   background-size: contain;
 }
 
 #like-label input:checked + span {
-  width: 20px;
-  height: 20px;
-  background: url("/image/like/like.png");
+  width: 50px;
+  height: 50px;
+  background: url("/image/like/liked.png");
   background-size: contain;
 }
