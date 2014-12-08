@@ -48,6 +48,16 @@ block content
                 a.btn.btn-lg.btn-dark.setwith200(href='/direction/#{venue[2]._id}') Get direction
     -}
     -else{
-      h2 Oops! Please select at least ONE categoty!
-      img(src='/image/noSelectionErrorPage.png')
+      h2.marginBottom Please select at least ONE categoty!
+      .row
+        .col-md-2
+        .col-md-8
+          img.fitdivimg.marginBottom(src='/image/noSelectionErrorPage.jpg')
+      .row
+        .col-md-4
+        .col-md-4
+          .row
+            .col-md-4
+            .col-md-4
+              a.btn.btn-primary.marginBottom(href='/level') Back »
     -}
