@@ -47,6 +47,7 @@ exports.show = function(req, res) {
                 average = 'N/A'
               } else {
                 average = sum/len
+                average = average.toFixed(1)
               } 
 
               var like = null;
@@ -207,6 +208,7 @@ exports.postRating = function(req, res) {
           average = 'N/A'
         } else {
           average = sum/len
+          average = average.toFixed(1)
         }
 
         Venue.findById(venue_id, function (err, currentVenue){
