@@ -69,8 +69,12 @@
 }
 
 .eatlogo{
-    height: 21px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
+}
+.eatlogoBig{
+    height:100px;
+    width:100px;
 }
 
 .item{
@@ -104,5 +108,10 @@
 .changeBgcolor{
     background-color: #fff;
     height:88vh;
+}
+
+.bgpic{
+    background-image: url('/image/bgpic.png');
+    background-color: #eeeeee;
 }
 
