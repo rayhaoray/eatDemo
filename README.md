@@ -1,3 +1,3 @@
 Eat In NEU
 
-Alpha
+This is the place to go.

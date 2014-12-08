@@ -82,13 +82,11 @@ block content
     p: a.text-danger(href='/account/unlink/google') Unlink your Google account
   else
     p: a.btn-linkdark(href='/auth/google') Link your Google account
-
-  if user.facebook
-    p: a.text-danger(href='/account/unlink/facebook') Unlink your Facebook account
-  else
-    p: a.btn-linkdark(href='/auth/facebook') Link your Facebook account
-
   if user.twitter
     p: a.text-danger(href='/account/unlink/twitter') Unlink your Twitter account
   else
     p: a.btn-linkdark(href='/auth/twitter') Link your Twitter account
+  if user.facebook
+    p: a.text-danger(href='/account/unlink/facebook') Unlink your Facebook account
+  else
+    p: a.btn-linkdark(href='/auth/facebook') Link your Facebook account
