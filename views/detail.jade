@@ -29,7 +29,8 @@ block content
       div.col-md-4(id='divForOpenhour')
         h3 Details
         ul
-          li Likes: #{likes} 
+          li Likes:
+            span#like-count #{likes}
           li Score:
             span#score #{average}
           li Address: #{venue.address}
