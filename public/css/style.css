@@ -1,23 +1,25 @@
 .fillvh-left { 
     height: 80vh;
+    background-color: transparent;
 }
 
 .fillvh-right { 
     height: 80vh;
+    background-color: transparent;
 }
 
 
 .fillvh-right-scroll { 
     height: 70vh;
     overflow: scroll;
-    background-color: #fff;
+    background-color: transparent;
 }
 
 
 .popular-tip-scroll { 
     height: 40vh;
     overflow: scroll;
-    background-color: #fff;
+    background-color: transparent;
 }
 
 .fillfix-left { 
@@ -115,3 +117,11 @@
     background-color: #eeeeee;
 }
 
+.venueMap{
+    width:100%;
+}
+
+.marginBottom{
+    margin-bottom: 50px;
+
+}

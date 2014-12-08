@@ -7,18 +7,19 @@ block content
           a.h1.logofont(href='/venue/#{venue[0]._id}')=venue[0].name+' »'
         .row
         div.col-md-8.column
-          img(src="#{venue[0].map}")
+          img.container.venueMap(src="#{venue[0].map}")
           .row
             .col-md-12.column
               .row
                 hr
-                .col-md-12
+                .col-md-4
                   p Likes: #{venue[0].like} 
-                  p Score: #{venue[0].score}
-                .col-sm-6
                   p Building: #{venue[0].building}
+                .col-md-4
+                  p Score: #{venue[0].score}
                   -if(venue[0].telephone != '')
                     p Phone: #{venue[0].telephone}
+                .col-md-4
                   a.btn.btn-lg.btn-primary.setwith200(href='/direction/#{venue[0]._id}') Get direction »
 
         if (venue.length > 1)
@@ -27,7 +28,8 @@ block content
               h4.divForAlsoLike="You might also like:"
               .col-md-12.column.divForSmallVenue
                 a.h3.logofont(href='/venue/#{venue[1]._id}')=venue[1].name+' »'
-                hr
+                br
+                br
                 p Likes: #{venue[1].like} 
                 p Score: #{venue[1].score}
                 p Building: #{venue[1].building}
@@ -36,7 +38,8 @@ block content
                 a.btn.btn-lg.btn-dark.setwith200(href='/direction/#{venue[1]._id}') Get direction
               .col-md-12.column.divForSmallVenue
                 a.h3.logofont(href='/venue/#{venue[2]._id}')=venue[2].name+' »'
-                hr
+                br
+                br
                 p Likes: #{venue[2].like}
                 p Score: #{venue[2].score}
                 p Building: #{venue[2].building}

@@ -51,7 +51,9 @@ block content
           li Fri: #{venue.openhour.fri}
           li Sat: #{venue.openhour.sat}
           li Sun: #{venue.openhour.sun}
-          
+        h3 Wanna Go?
+        a.btn.btn-lg.btn-primary.setwith360(href='/direction/#{venue._id}') Get direction »
+      
       div.col-md-4(id='divForDetails')
         h3 Popular Tips
         div.popular-tip-scroll
@@ -82,14 +84,14 @@ block content
         form.form-horizontal(role='form', method='POST')
           input(type='hidden', name='_csrf', value=_csrf)
           h3 Leave your tips!
-          textarea.noneResize(name='tip', id='tip', rows='10', cols='35', 
+          textarea.setwith360.noneResize(name='tip', id='tip', rows='10', cols='35', 
             aria-describedby='TipHelpBlock', wrap='hard',
             placeholder='Your tips help others to learn more about this venue!' required)
           span.help-block(id='TipHelpBlock') We appreciate your tips!
           .col-sm-6
             .checkbox
           .col-sm-offset-3.col-sm-4
-          button.btn.btn-primary.setwith200(type='submit')
+          button.btn.btn-lg.btn-primary.setwith360.marginBottom(type='submit')
             | Add Tip »
 
 block script
