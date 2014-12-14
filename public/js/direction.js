@@ -67,10 +67,13 @@ function calcRoute() {
         markerArray = [];
 
         var start = currentCoor;
-        var endName = document.getElementById('end').value;
-        var end;
-        console.log(81, lat, lng)
-        end = new google.maps.LatLng(lat, lng);
+        //var endName = document.getElementById('end').value;
+        //var end;
+        //console.log(81, lat, lng)
+        //end = new google.maps.LatLng(lat, lng);
+
+        //var endName = document.getElementById('end').value;
+        end = address;
         var request = {
             origin:start,
             destination:end,
