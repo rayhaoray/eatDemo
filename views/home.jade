@@ -1,15 +1,24 @@
-extends layout
-
-block content
-	h1 Eat In NEU
-	h3.marginBottom -- Junjue's final project for CS5610
-	
-	.row
-		.col-md-3
-			a.btn.btn-default.fitdivimg(href='https://github.com/junjuewang/eatInNEU/blob/master/README.md', role='button') Documentation »
-		.col-md-3
-			a.btn.btn-default.fitdivimg.marginBottom(href='https://github.com/junjuewang/eatInNEU', role='button') Github »
-	.row
-		.col-md-3
-			a.btn.btn-primary.fitdivimg.marginBottom(href='cover', role='button') Let's go »
-
+doctype html
+html(lang='en')
+head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='Junjue')
+    link(rel='icon', href='/image/eatlogo.png')
+    title Welcome
+    != css('styles')
+    link(href='css/cover.css', rel='stylesheet')
+    
+  body
+    .site-wrapper
+      .site-wrapper-inner
+        .cover-container
+          .inner.cover
+            img.eatlogoBig(src='/image/eatlogo.png')
+            h1.cover-heading Welcome
+            p.lead Checkout my project or my LinkedIn 
+            p.lead
+              a.btn.btn-primary(href='cover', role='button') Eat In NEU»
+              a.btn.btn-primary(href='https://github.com/junjuewang/eatInNEU', role='button') LinkedIn»
