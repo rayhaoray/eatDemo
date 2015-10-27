@@ -19,7 +19,7 @@ var path = require('path');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var expressValidator = require('express-validator');
-var connectAssets = require('connect-assets');
+var sass = require('node-sass-middleware');
 
 /**
  * Controllers (route handlers).
@@ -82,9 +82,11 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(compress());
-app.use(connectAssets({
-  paths: [path.join(__dirname, 'public/css'), path.join(__dirname, 'public/js')],
-  helperContext: app.locals
+app.use(sass({
+  src: path.join(__dirname, 'public'),
+  dest: path.join(__dirname, 'public'),
+  debug: true,
+  outputStyle: 'expanded'
 }));
 app.use(logger('dev'));
 app.use(bodyParser.json());

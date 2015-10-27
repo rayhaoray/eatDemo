@@ -1,8 +1,10 @@
-@import "lib/bootstrap/bootstrap";
-@import "lib/font-awesome/font-awesome";
-@import "lib/ionicons/ionicons";
-@import "lib/bootstrap-social";
-@import "themes/eatStyle";
+@import "themes/default/variables";
+
+@import "vendors/bootstrap/bootstrap";
+@import "vendors/bootstrap-social";
+@import "vendors/font-awesome/font-awesome";
+
+@import "themes/default/styles";
 
 // Scaffolding
 // -------------------------
@@ -24,8 +26,7 @@ footer {
   height: 45px;
   line-height: 45px;
 
-  p,
-  ul {
+  p, ul {
     margin-bottom: 0;
   }
 }
@@ -58,7 +59,6 @@ footer {
 // Font Icons
 // -------------------------
 
-.fa,
-[class^='ion-'] {
+.fa {
   margin-right: 6px;
 }
